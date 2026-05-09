@@ -3,323 +3,258 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IT Media Service Center | প্রিমিয়াম ডিজিটাল সেবা</title>
+  <title>IT Media Service | প্রিমিয়াম আইটি সলিউশন</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap');
-    * {
-      font-family: 'Inter', sans-serif;
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+    * { font-family: 'Plus Jakarta Sans', sans-serif; }
+    html { scroll-behavior: smooth; }
+    .premium-gradient {
+      background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 100%);
     }
-    html {
-      scroll-behavior: smooth;
+    .card-modern {
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      backdrop-filter: blur(0px);
     }
-    body {
-      background: #fafafc;
+    .card-modern:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 30px 40px -20px rgba(0,0,0,0.25);
     }
-    .premium-card {
-      transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    .glass-nav-fixed {
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-    .premium-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 35px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(79, 70, 229, 0.15);
+    .hero-blur {
+      background: radial-gradient(ellipse 80% 50% at 50% 40%, rgba(99,102,241,0.2), transparent);
     }
-    .glass-nav {
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+    .btn-premium {
+      background: linear-gradient(105deg, #4F46E5 0%, #7C3AED 100%);
+      transition: all 0.2s;
     }
-    .hero-bg {
-      background: radial-gradient(ellipse 80% 50% at 20% 40%, rgba(49, 46, 129, 0.15), transparent),
-                  linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+    .btn-premium:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 25px -12px rgba(79,70,229,0.4);
     }
-    .modal-transition {
-      transition: opacity 0.25s ease, visibility 0.25s ease;
+    .section-title {
+      position: relative;
+      display: inline-block;
     }
-    .service-icon-bg {
-      background: linear-gradient(135deg, #eef2ff, #ffffff);
-      box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.08);
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 4px;
+      background: linear-gradient(90deg, #4F46E5, #A855F7);
+      border-radius: 4px;
     }
-    .btn-glow {
-      box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.25);
+    .service-card-click {
+      cursor: pointer;
     }
-    .hover-lift {
-      transition: transform 0.2s, box-shadow 0.2s;
+    .frame-img {
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.5s ease;
     }
-    .hover-lift:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.1);
+    .group:hover .frame-img {
+      transform: scale(1.08);
+    }
+    .modal-custom {
+      transition: all 0.25s ease-out;
     }
   </style>
 </head>
-<body class="antialiased">
+<body class="bg-slate-50 text-slate-800">
 
-<!-- ========== STICKY GLASS NAVBAR ========== -->
-<nav class="sticky top-0 z-50 glass-nav transition-all duration-300">
+<!-- ========== NAVBAR (গ্লাস, প্রফেশনাল) ========== -->
+<nav class="fixed top-0 w-full z-50 glass-nav-fixed transition-all duration-300">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <div class="flex justify-between items-center py-4">
+    <div class="flex justify-between items-center h-16 lg:h-20">
       <div class="flex items-center gap-3">
-        <div class="w-9 h-9 bg-gradient-to-br from-indigo-600 to-blue-700 rounded-xl flex items-center justify-center shadow-md">
-          <i class="fas fa-network-wired text-white text-sm"></i>
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg">
+          <i class="fas fa-microchip text-white text-sm"></i>
         </div>
-        <span class="font-bold text-xl tracking-tight bg-gradient-to-r from-slate-800 to-slate-900 bg-clip-text text-transparent">IT Media<span class="text-indigo-600">Service</span></span>
+        <span class="font-extrabold text-xl tracking-tight text-white">IT Media<span class="text-indigo-300">Service</span></span>
       </div>
-      <div class="hidden md:flex gap-8 text-sm font-semibold">
-        <a href="#home" class="text-slate-700 hover:text-indigo-600 transition">হোম</a>
-        <a href="#services" class="text-slate-700 hover:text-indigo-600 transition">সার্ভিসসমূহ</a>
-        <a href="#print" class="text-slate-700 hover:text-indigo-600 transition">প্রিন্ট & ফ্রেম</a>
-        <a href="#contact" class="text-slate-700 hover:text-indigo-600 transition">যোগাযোগ</a>
+      <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-200">
+        <a href="#home" class="hover:text-white transition">হোম</a>
+        <a href="#services" class="hover:text-white transition">সেবাসমূহ</a>
+        <a href="#print" class="hover:text-white transition">প্রিমিয়াম ফ্রেম</a>
+        <a href="#contact" class="hover:text-white transition">যোগাযোগ</a>
       </div>
-      <a href="#contact" class="bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-md hover:bg-indigo-700 transition-all hover:scale-105 flex items-center gap-2">
-        <i class="fas fa-headset"></i> সংযোগ করুন
+      <a href="#contact" class="bg-white/10 backdrop-blur-sm text-white px-5 py-2 rounded-full text-sm font-semibold border border-white/20 hover:bg-white/20 transition-all flex items-center gap-2">
+        <i class="fas fa-headset"></i> বুক সেবা
       </a>
     </div>
   </div>
 </nav>
 
-<!-- ========== HERO SECTION (প্রিমিয়াম, ক্লিন, অ্যালাইন) ========== -->
-<section id="home" class="hero-bg relative overflow-hidden pt-20 pb-28 px-6">
-  <div class="max-w-6xl mx-auto text-center relative z-10">
-    <div class="inline-flex bg-white/70 backdrop-blur-sm rounded-full px-5 py-1.5 shadow-sm text-sm font-medium text-indigo-700 mb-6 border border-indigo-100">
-      <i class="fas fa-certificate mr-2 text-indigo-500"></i> ট্রাস্টেড ডিজিটাল সেন্টার
+<!-- ========== হিরো সেকশন (মডার্ন, মিনিমাল) ========== -->
+<section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden premium-gradient pt-20">
+  <div class="absolute inset-0 hero-blur pointer-events-none"></div>
+  <div class="absolute top-20 right-10 w-72 h-72 bg-indigo-500/20 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-20 left-10 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl"></div>
+  
+  <div class="relative z-10 max-w-5xl mx-auto text-center px-6 py-20 lg:py-28">
+    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-5 py-2 text-indigo-200 text-sm border border-white/20 mb-6">
+      <i class="fas fa-award text-indigo-300"></i>
+      <span>বিজনেস গ্রেড আইটি সেন্টার</span>
     </div>
-    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 leading-tight">
-      IT Media <span class="bg-gradient-to-r from-indigo-700 to-blue-700 bg-clip-text text-transparent">Service Center</span>
+    <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tight leading-tight">
+      ডিজিটাল সেবার<br>
+      <span class="bg-gradient-to-r from-indigo-300 via-purple-200 to-pink-200 bg-clip-text text-transparent">নতুন ঠিকানা</span>
     </h1>
-    <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mt-6">সকল ডিজিটাল, অনলাইন ও প্রিন্ট সার্ভিস – দ্রুত, নির্ভরযোগ্য ও পেশাদার ব্যবস্থাপনায়।</p>
+    <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mt-6 leading-relaxed">প্রফেশনাল আইটি সাপোর্ট, প্রিন্ট সলিউশন ও কাস্টম ডিজাইন — এক platform এ। ২৪/৭ অনলাইন সহায়তা।</p>
     <div class="flex flex-wrap justify-center gap-5 mt-10">
-      <a href="#services" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3.5 rounded-xl font-semibold shadow-lg transition-all flex items-center gap-2"><i class="fas fa-arrow-down"></i> এক্সপ্লোর করুন</a>
-      <a href="https://wa.me/8801814502810" target="_blank" class="bg-white border border-gray-200 text-gray-700 hover:border-indigo-300 px-8 py-3.5 rounded-xl font-semibold shadow-sm transition-all flex items-center gap-2"><i class="fab fa-whatsapp text-green-600"></i> WhatsApp অর্ডার</a>
+      <a href="#services" class="btn-premium text-white px-8 py-3.5 rounded-xl font-bold shadow-2xl flex items-center gap-2"><i class="fas fa-rocket"></i> এক্সপ্লোর করুন</a>
+      <a href="https://wa.me/8801814502810" target="_blank" class="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-3.5 rounded-xl font-semibold hover:bg-white/20 transition flex items-center gap-2"><i class="fab fa-whatsapp text-green-400"></i> WhatsApp অর্ডার</a>
     </div>
   </div>
-  <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
-    <svg class="relative block w-full h-[48px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="#fafafc" opacity="0.9"></path>
+  <div class="absolute bottom-0 w-full overflow-hidden leading-[0]">
+    <svg class="relative block w-full h-[50px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28 70.36-5.37,136.33-33.31,206.8-37.5 70.44-4.19,140.14,17.52,210.8,36.09 69.27,18,138.3,24.88,209.4,13.08 36.15-6,69.85-17.84,104.45-29.34 34.6-11.5,78.4-24.5,113.56-27.8 35.16-3.3,69.66,0.2,104.46,10.8 34.8,10.6,69.6,31.4,104.4,51.4 34.8,20,69.6,40,104.4,50 34.8,10,69.6,10,104.4,0L1200,120H0Z" fill="#f8fafc"></path>
     </svg>
   </div>
 </section>
 
-<!-- ========== SERVICES SECTION (ক্লিকেবল মডাল সহ প্রিমিয়াম কার্ড) ========== -->
-<section id="services" class="py-24 px-6 bg-white">
+<!-- ========== সার্ভিস সেকশন (মডার্ন কার্ড, ক্লিক করে মডাল) ========== -->
+<section id="services" class="py-28 px-6 bg-slate-50">
   <div class="max-w-7xl mx-auto">
     <div class="text-center mb-16">
-      <span class="text-indigo-600 font-semibold tracking-wide bg-indigo-50 px-4 py-1.5 rounded-full text-sm"><i class="fas fa-microchip mr-1"></i> আমাদের কোর এক্সপার্টাইজ</span>
-      <h2 class="text-3xl md:text-4xl font-bold mt-5 text-slate-800">পেশাদার আইটি ও ডিজিটাল সার্ভিস</h2>
-      <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-blue-500 mx-auto rounded-full mt-5"></div>
-      <p class="text-slate-500 max-w-2xl mx-auto mt-4">প্রতিটি সেবা আধুনিক টুলস ও দক্ষ টিম দ্বারা সম্পন্ন হয়। বিস্তারিত জানতে কার্ডে ক্লিক করুন।</p>
+      <span class="text-indigo-600 font-bold bg-indigo-100 px-5 py-1.5 rounded-full text-sm"><i class="fas fa-cogs mr-1"></i> WHAT WE OFFER</span>
+      <h2 class="section-title text-3xl md:text-4xl font-bold mt-5 text-slate-800">আমাদের প্রিমিয়াম সেবা</h2>
+      <p class="text-slate-500 max-w-2xl mx-auto mt-6">পেশাদারিত্ব, নির্ভুলতা এবং দ্রুত সমাধান — প্রতিটি সেবাতেই গুণগত মান নিশ্চিত।</p>
     </div>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Service 1 -->
-      <div onclick="openModal('modal1')" class="bg-white rounded-2xl p-7 border border-gray-100 premium-card cursor-pointer shadow-sm transition">
-        <div class="service-icon-bg w-14 h-14 rounded-xl flex items-center justify-center mb-5">
-          <i class="fas fa-laptop-code text-2xl text-indigo-700"></i>
-        </div>
-        <h3 class="text-xl font-bold text-slate-800">কম্পিউটার সার্ভিসিং</h3>
-        <p class="text-slate-500 mt-2 leading-relaxed">ডেস্কটপ, ল্যাপটপ রিপেয়ার, সফটওয়্যার সেটআপ, ড্রাইভার ও ভাইরাস রিমুভ।</p>
-        <div class="mt-5 text-indigo-600 text-sm font-medium flex items-center gap-1">বিস্তারিত <i class="fas fa-chevron-right text-xs"></i></div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+      <!-- সার্ভিস 1 -->
+      <div onclick="openServiceModal('modalPc')" class="bg-white rounded-2xl p-7 shadow-md card-modern service-card-click cursor-pointer border border-slate-100">
+        <div class="w-14 h-14 rounded-xl bg-indigo-100 flex items-center justify-center mb-5"><i class="fas fa-laptop-code text-2xl text-indigo-700"></i></div>
+        <h3 class="text-xl font-bold">কম্পিউটার কেয়ার</h3>
+        <p class="text-slate-500 mt-2">ল্যাপটপ/পিসি রিপেয়ার, সফটওয়্যার, ড্রাইভার ও অপটিমাইজেশন</p>
+        <div class="mt-4 text-indigo-600 text-sm font-semibold flex items-center gap-1">বিস্তারিত →</div>
       </div>
-      <!-- Service 2 -->
-      <div onclick="openModal('modal2')" class="bg-white rounded-2xl p-7 border border-gray-100 premium-card cursor-pointer shadow-sm transition">
-        <div class="service-icon-bg w-14 h-14 rounded-xl flex items-center justify-center mb-5">
-          <i class="fas fa-print text-2xl text-indigo-700"></i>
-        </div>
-        <h3 class="text-xl font-bold text-slate-800">প্রিন্ট ও ফটোকপি</h3>
-        <p class="text-slate-500 mt-2">হাই-রেজুলেশন প্রিন্ট, ফ্লাইয়ার, ফটোকপি ও স্ক্যানিং সার্ভিস।</p>
-        <div class="mt-5 text-indigo-600 text-sm font-medium flex items-center gap-1">বিস্তারিত <i class="fas fa-chevron-right text-xs"></i></div>
+      <div onclick="openServiceModal('modalPrint')" class="bg-white rounded-2xl p-7 shadow-md card-modern service-card-click cursor-pointer">
+        <div class="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center mb-5"><i class="fas fa-print text-2xl text-emerald-700"></i></div>
+        <h3 class="text-xl font-bold">প্রো প্রিন্ট স্টুডিও</h3>
+        <p class="text-slate-500 mt-2">হাই-রেজ প্রিন্ট, ফটোকপি, ব্রোশিওর ও ফ্লাইয়ার ডিজাইন।</p>
+        <div class="mt-4 text-emerald-600 text-sm font-semibold flex items-center gap-1">বিস্তারিত →</div>
       </div>
-      <!-- Service 3 -->
-      <div onclick="openModal('modal3')" class="bg-white rounded-2xl p-7 border border-gray-100 premium-card cursor-pointer shadow-sm transition">
-        <div class="service-icon-bg w-14 h-14 rounded-xl flex items-center justify-center mb-5">
-          <i class="fas fa-file-signature text-2xl text-indigo-700"></i>
-        </div>
-        <h3 class="text-xl font-bold text-slate-800">অনলাইন আবেদন</h3>
-        <p class="text-slate-500 mt-2">পাসপোর্ট, এনআইডি, চাকরি আবেদন, ভিসা ফর্ম ও সব ধরনের ফিলিং সাপোর্ট।</p>
-        <div class="mt-5 text-indigo-600 text-sm font-medium flex items-center gap-1">বিস্তারিত <i class="fas fa-chevron-right text-xs"></i></div>
+      <div onclick="openServiceModal('modalForm')" class="bg-white rounded-2xl p-7 shadow-md card-modern service-card-click cursor-pointer">
+        <div class="w-14 h-14 rounded-xl bg-amber-100 flex items-center justify-center mb-5"><i class="fas fa-file-alt text-2xl text-amber-700"></i></div>
+        <h3 class="text-xl font-bold">অনলাইন আবেদন</h3>
+        <p class="text-slate-500 mt-2">পাসপোর্ট, এনআইডি, চাকরি, ভিসা — ফর্ম ফিলাপ ও জমা</p>
+        <div class="mt-4 text-amber-600 text-sm font-semibold flex items-center gap-1">বিস্তারিত →</div>
       </div>
-      <!-- Service 4 -->
-      <div onclick="openModal('modal4')" class="bg-white rounded-2xl p-7 border border-gray-100 premium-card cursor-pointer shadow-sm transition">
-        <div class="service-icon-bg w-14 h-14 rounded-xl flex items-center justify-center mb-5">
-          <i class="fas fa-palette text-2xl text-indigo-700"></i>
-        </div>
-        <h3 class="text-xl font-bold text-slate-800">প্রফেশনাল ডিজাইন</h3>
-        <p class="text-slate-500 mt-2">ব্যানার, পোস্টার, বিজনেস কার্ড, সোশ্যাল মিডিয়া গ্রাফিক্স।</p>
-        <div class="mt-5 text-indigo-600 text-sm font-medium flex items-center gap-1">বিস্তারিত <i class="fas fa-chevron-right text-xs"></i></div>
+      <div onclick="openServiceModal('modalDesign')" class="bg-white rounded-2xl p-7 shadow-md card-modern service-card-click cursor-pointer">
+        <div class="w-14 h-14 rounded-xl bg-rose-100 flex items-center justify-center mb-5"><i class="fas fa-palette text-2xl text-rose-600"></i></div>
+        <h3 class="text-xl font-bold">ক্রিয়েটিভ ডিজাইন</h3>
+        <p class="text-slate-500 mt-2">ব্যানার, পোস্টার, লোগো, বিজনেস কার্ড — আর্টিস্টিক লুক</p>
+        <div class="mt-4 text-rose-600 text-sm font-semibold flex items-center gap-1">বিস্তারিত →</div>
       </div>
-      <!-- Service 5 -->
-      <div onclick="openModal('modal5')" class="bg-white rounded-2xl p-7 border border-gray-100 premium-card cursor-pointer shadow-sm transition">
-        <div class="service-icon-bg w-14 h-14 rounded-xl flex items-center justify-center mb-5">
-          <i class="fas fa-headset text-2xl text-indigo-700"></i>
-        </div>
-        <h3 class="text-xl font-bold text-slate-800">অনলাইন সাপোর্ট</h3>
-        <p class="text-slate-500 mt-2">যেকোনো আইটি ইস্যুতে দূরবর্তী সহায়তা, কনফিগারেশন ও ফিক্স।</p>
-        <div class="mt-5 text-indigo-600 text-sm font-medium flex items-center gap-1">বিস্তারিত <i class="fas fa-chevron-right text-xs"></i></div>
+      <div onclick="openServiceModal('modalSupport')" class="bg-white rounded-2xl p-7 shadow-md card-modern service-card-click cursor-pointer">
+        <div class="w-14 h-14 rounded-xl bg-cyan-100 flex items-center justify-center mb-5"><i class="fas fa-headset text-2xl text-cyan-700"></i></div>
+        <h3 class="text-xl font-bold">অনলাইন আইটি সাপোর্ট</h3>
+        <p class="text-slate-500 mt-2">রিমোট সলিউশন, সফটওয়্যার ইন্সটল, ট্রাবলশুটিং</p>
+        <div class="mt-4 text-cyan-600 text-sm font-semibold flex items-center gap-1">বিস্তারিত →</div>
       </div>
-      <!-- Service 6 -->
-      <div onclick="openModal('modal6')" class="bg-white rounded-2xl p-7 border border-gray-100 premium-card cursor-pointer shadow-sm transition">
-        <div class="service-icon-bg w-14 h-14 rounded-xl flex items-center justify-center mb-5">
-          <i class="fas fa-bolt text-2xl text-indigo-700"></i>
-        </div>
-        <h3 class="text-xl font-bold text-slate-800">এক্সপ্রেস সার্ভিস</h3>
-        <p class="text-slate-500 mt-2">জরুরী কাজের জন্য ২৪ ঘণ্টা এক্সপ্রেস সাপোর্ট ও ফাস্ট ডেলিভারি।</p>
-        <div class="mt-5 text-indigo-600 text-sm font-medium flex items-center gap-1">বিস্তারিত <i class="fas fa-chevron-right text-xs"></i></div>
+      <div onclick="openServiceModal('modalExpress')" class="bg-white rounded-2xl p-7 shadow-md card-modern service-card-click cursor-pointer">
+        <div class="w-14 h-14 rounded-xl bg-purple-100 flex items-center justify-center mb-5"><i class="fas fa-bolt text-2xl text-purple-700"></i></div>
+        <h3 class="text-xl font-bold">এক্সপ্রেস সার্ভিস</h3>
+        <p class="text-slate-500 mt-2">জরুরী কাজ ২-৪ ঘণ্টায় সমাধান, ফাস্ট ট্র্যাক ডেলিভারি</p>
+        <div class="mt-4 text-purple-600 text-sm font-semibold flex items-center gap-1">বিস্তারিত →</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== PRINT & FRAME SECTION (সুন্দর লেআউট) ========== -->
-<section id="print" class="py-24 px-6 bg-gradient-to-br from-slate-50 to-white">
+<!-- ========== ফ্রেম সেকশন (ছবি সহ মডার্ন গ্যালারি) ========== -->
+<section id="print" class="py-28 px-6 bg-gradient-to-br from-slate-100 to-white">
   <div class="max-w-7xl mx-auto">
     <div class="text-center mb-14">
-      <span class="bg-amber-100 text-amber-700 px-5 py-1 rounded-full text-sm font-semibold"><i class="fas fa-images mr-1"></i> প্রিমিয়াম কালেকশন</span>
-      <h2 class="text-3xl md:text-4xl font-bold mt-4 text-slate-800">ফ্রেম ডিজাইন ও প্রিন্ট আর্ট</h2>
-      <p class="text-slate-500 max-w-2xl mx-auto mt-3">দেয়াল সাজাতে বা উপহার দিতে পারফেক্ট – মর্ডান ফ্রেম ও কাস্টম প্রিন্ট</p>
+      <span class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-5 py-1 rounded-full text-sm font-semibold shadow-md"><i class="fas fa-frame"></i> প্রিমিয়াম কালেকশন</span>
+      <h2 class="text-3xl md:text-4xl font-bold mt-5 text-slate-800">লিমিটেড এডিশন ফ্রেম</h2>
+      <p class="text-slate-500 max-w-2xl mx-auto mt-3">প্রতিটি ফ্রেম হাতে তৈরি, আধুনিক ডিজাইন ও প্রিমিয়াম ফিনিশিং সহ</p>
     </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-400">
-        <div class="h-56 bg-gradient-to-br from-indigo-400 to-indigo-700 flex flex-col items-center justify-center text-white">
-          <i class="fas fa-crown text-5xl mb-2 opacity-80"></i>
-          <span class="text-xl font-bold tracking-wide">ম্যাট ফিনিশ ফ্রেম</span>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- ফ্রেম 1 - ছবি -->
+      <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+        <div class="h-64 overflow-hidden relative bg-gray-200">
+          <div class="frame-img w-full h-full bg-cover bg-center transition-transform duration-700" style="background-image: url('https://images.pexels.com/photos/1571460/art-frame-picture-display-1571460.jpeg?auto=compress&cs=tinysrgb&w=600');"></div>
+          <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition"></div>
         </div>
         <div class="p-6">
-          <h3 class="text-2xl font-bold">এলিগেন্ট ফ্রেম</h3>
-          <p class="text-slate-500 mt-1">প্রিমিয়াম ৩-ডি ইফেক্ট, যেকোনো ছবির জন্য পারফেক্ট</p>
-          <div class="flex justify-between items-center mt-4">
-            <span class="text-2xl font-black text-slate-800">২৫০ ৳</span>
-            <a href="https://wa.me/8801814502810?text=এলিগেন্ট%20ফ্রেম%20অর্ডার%20করতে%20চাই" class="bg-green-600 hover:bg-green-700 px-5 py-2 rounded-xl text-white text-sm flex items-center gap-1"><i class="fab fa-whatsapp"></i> অর্ডার</a>
-          </div>
+          <div class="flex justify-between items-start"><h3 class="text-2xl font-bold">আর্ট ডেকো ফ্রেম</h3><span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full font-bold">২৫০৳</span></div>
+          <p class="text-slate-500 mt-1">ভিনটেজ ফিনিশ, গোল্ড লিফ আর্ট</p>
+          <a href="https://wa.me/8801814502810?text=আর্ট%20ডেকো%20ফ্রেম%20অর্ডার" class="mt-4 inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 px-5 py-2 rounded-xl font-medium hover:bg-indigo-100 transition"><i class="fab fa-whatsapp"></i> অর্ডার করুন</a>
         </div>
       </div>
-      <div class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-400">
-        <div class="h-56 bg-gradient-to-br from-rose-400 to-pink-600 flex flex-col items-center justify-center text-white">
-          <i class="fas fa-gem text-5xl mb-2"></i>
-          <span class="text-xl font-bold">মেটালিক আর্ট</span>
-        </div>
-        <div class="p-6">
-          <h3 class="text-2xl font-bold">রয়্যাল ফ্রেম</h3>
-          <p class="text-slate-500 mt-1">গ্লসি টেক্সচার + গোল্ড ফিনিশ উপলব্ধ</p>
-          <div class="flex justify-between items-center mt-4">
-            <span class="text-2xl font-black text-slate-800">৩৫০ ৳</span>
-            <a href="https://wa.me/8801814502810?text=রয়্যাল%20মেটালিক%20ফ্রেম" class="bg-green-600 hover:bg-green-700 px-5 py-2 rounded-xl text-white text-sm flex items-center gap-1"><i class="fab fa-whatsapp"></i> অর্ডার</a>
-          </div>
-        </div>
+      <!-- ফ্রেম 2 -->
+      <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+        <div class="h-64 overflow-hidden"><div class="frame-img w-full h-full bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/1125137/art-frame-picture-display-1125137.jpeg?auto=compress&cs=tinysrgb&w=600');"></div></div>
+        <div class="p-6"><div class="flex justify-between"><h3 class="text-2xl font-bold">মডার্ন মিনিমাল</h3><span class="bg-amber-100 px-3 py-1 rounded-full font-bold">৩৫০৳</span></div><p class="text-slate-500 mt-1">সাদা আখরোট ফিনিশ, স্লিম এজ</p><a href="https://wa.me/8801814502810?text=মডার্ন%20মিনিমাল%20ফ্রেম" class="mt-4 inline-block bg-indigo-50 text-indigo-700 px-5 py-2 rounded-xl font-medium"><i class="fab fa-whatsapp"></i> অর্ডার করুন</a></div>
       </div>
-      <div class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-400">
-        <div class="h-56 bg-gradient-to-br from-cyan-500 to-blue-600 flex flex-col items-center justify-center text-white">
-          <i class="fas fa-star-of-life text-5xl mb-2"></i>
-          <span class="text-xl font-bold">প্রিমিয়াম সিরিজ</span>
-        </div>
-        <div class="p-6">
-          <h3 class="text-2xl font-bold">ডিলাক্স ফ্রেম</h3>
-          <p class="text-slate-500 mt-1">হাতে তৈরি বর্ডার, ইউভি প্রিন্ট সাপোর্ট</p>
-          <div class="flex justify-between items-center mt-4">
-            <span class="text-2xl font-black text-slate-800">৫৫০ ৳</span>
-            <a href="https://wa.me/8801814502810?text=প্রিমিয়াম%20ডিলাক্স%20ফ্রেম" class="bg-green-600 hover:bg-green-700 px-5 py-2 rounded-xl text-white text-sm flex items-center gap-1"><i class="fab fa-whatsapp"></i> অর্ডার</a>
-          </div>
-        </div>
+      <!-- ফ্রেম 3 -->
+      <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+        <div class="h-64 overflow-hidden"><div class="frame-img w-full h-full bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/129731/pexels-photo-129731.jpeg?auto=compress&cs=tinysrgb&w=600');"></div></div>
+        <div class="p-6"><div class="flex justify-between"><h3 class="text-2xl font-bold">প্রিমিয়াম গোল্ড</h3><span class="bg-amber-100 px-3 py-1 rounded-full font-bold">৫৫০৳</span></div><p class="text-slate-500 mt-1">মার্বেল টেক্সচার + লাক্ষা পলিশ</p><a href="https://wa.me/8801814502810?text=প্রিমিয়াম%20গোল্ড%20ফ্রেম" class="mt-4 inline-block bg-indigo-50 text-indigo-700 px-5 py-2 rounded-xl font-medium"><i class="fab fa-whatsapp"></i> অর্ডার করুন</a></div>
       </div>
     </div>
-    <div class="text-center mt-12 bg-white/70 backdrop-blur-sm rounded-2xl py-5 border border-indigo-100 max-w-3xl mx-auto">
-      <p class="text-slate-600"><i class="fas fa-paintbrush text-indigo-500 mr-2"></i> কাস্টম সাইজ ও ডিজাইন অর্ডার করতে <a href="https://wa.me/8801814502810" class="font-bold text-indigo-700 underline">WhatsApp</a> এ জানান</p>
-    </div>
+    <div class="text-center mt-12"><p class="inline-flex gap-2 bg-white rounded-full px-6 py-3 shadow-sm"><i class="fas fa-pen-fancy text-indigo-500"></i> কাস্টম ফ্রেম ও সাইজ অনুরোধে <a href="https://wa.me/8801814502810" class="font-bold text-indigo-700 underline">WhatsApp</a></p></div>
   </div>
 </section>
 
-<!-- ========== CONTACT SECTION ========== -->
-<section id="contact" class="py-24 px-6 bg-white">
+<!-- ========== কন্টাক্ট সেকশন (মিনিমাল প্রিমিয়াম) ========== -->
+<section id="contact" class="py-28 px-6 bg-slate-900 text-white">
   <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-14">
-      <h2 class="text-3xl md:text-4xl font-bold text-slate-800">সরাসরি যোগাযোগ</h2>
-      <div class="w-16 h-1 bg-indigo-500 mx-auto rounded-full mt-4"></div>
-      <p class="text-slate-500 max-w-xl mx-auto mt-4">কল করুন অথবা হোয়াটসঅ্যাপে মেসেজ করুন — আমরা ২৪/৭ সাড়া দিতে প্রস্তুত।</p>
-    </div>
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <div class="space-y-6">
-        <div class="flex items-center gap-5 p-5 rounded-2xl bg-slate-50 shadow-sm hover:shadow transition">
-          <div class="bg-indigo-100 w-12 h-12 rounded-full flex items-center justify-center"><i class="fas fa-phone-alt text-indigo-700"></i></div>
-          <div><p class="text-sm text-slate-500">কল সাপোর্ট</p><p class="text-xl font-bold">০১৮১৪৫০২৮১০</p></div>
-        </div>
-        <div class="flex items-center gap-5 p-5 rounded-2xl bg-slate-50 shadow-sm hover:shadow transition">
-          <div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center"><i class="fab fa-whatsapp text-green-600"></i></div>
-          <div><p class="text-sm text-slate-500">হোয়াটসঅ্যাপ</p><p class="text-xl font-bold">+880 1814-502810</p></div>
-        </div>
-        <div class="flex items-center gap-5 p-5 rounded-2xl bg-slate-50 shadow-sm hover:shadow transition">
-          <div class="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center"><i class="fas fa-map-marker-alt text-red-500"></i></div>
-          <div><p class="text-sm text-slate-500">ঠিকানা</p><p class="text-lg font-semibold">সিলেট, বাংলাদেশ (শাহী ঈদগাহ সংলগ্ন)</p></div>
-        </div>
+    <div class="text-center mb-14"><h2 class="text-3xl md:text-5xl font-bold">যোগাযোগ & <span class="bg-gradient-to-r from-indigo-300 to-purple-300 bg-clip-text text-transparent">বুকিং</span></h2><div class="w-16 h-1 bg-indigo-400 mx-auto mt-4 rounded-full"></div><p class="text-slate-300 mt-4">সরাসরি কল করুন অথবা হোয়াটসঅ্যাপে সার্ভিস নিন</p></div>
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+        <div class="space-y-5"><div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-indigo-500/20 flex items-center justify-center"><i class="fas fa-phone-alt text-indigo-300"></i></div><div><p class="text-sm text-slate-300">হটলাইন</p><p class="text-2xl font-bold">০১৮১৪৫০২৮১০</p></div></div><div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center"><i class="fab fa-whatsapp text-green-400"></i></div><div><p class="text-sm text-slate-300">হোয়াটসঅ্যাপ</p><p class="text-2xl font-bold">+880 1814-502810</p></div></div><div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center"><i class="fas fa-map-marker-alt text-rose-300"></i></div><div><p class="text-sm text-slate-300">ঠিকানা</p><p class="text-xl font-semibold">সিলেট, জিন্দাবাজার (সিটি সেন্টার সংলগ্ন)</p></div></div></div>
       </div>
-      <div class="bg-gradient-to-br from-indigo-50 to-white rounded-3xl p-8 shadow-lg border border-indigo-100">
-        <h3 class="text-2xl font-bold text-center">দ্রুত সেবা নিতে চান?</h3>
-        <div class="mt-6 flex flex-col gap-4">
-          <a href="https://wa.me/8801814502810?text=আমি%20সার্ভিস%20নিতে%20চাই" target="_blank" class="bg-green-600 hover:bg-green-700 text-white text-center py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3 shadow-lg transition-all"><i class="fab fa-whatsapp text-2xl"></i> WhatsApp এ কথা বলুন</a>
-          <a href="tel:+8801814502810" class="border-2 border-indigo-200 text-indigo-700 hover:bg-indigo-50 text-center py-3 rounded-xl font-semibold transition"><i class="fas fa-phone-alt"></i> সরাসরি কল করুন</a>
-          <p class="text-xs text-center text-slate-400 mt-2">সকাল ৯টা - রাত ৯টা (শুক্রবার ছুটি)</p>
-        </div>
-      </div>
+      <div class="bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-2xl p-8 border border-white/20 text-center"><i class="fas fa-comment-dots text-4xl text-indigo-300 mb-4 block"></i><h3 class="text-2xl font-bold mb-3">সার্ভিস নিতে প্রস্তুত?</h3><p class="text-slate-300">আমরা ১০ মিনিটের মধ্যে রিপ্লাই দেই</p><a href="https://wa.me/8801814502810?text=হাই,%20আমি%20আপনার%20সার্ভিস%20নিতে%20চাই" class="inline-block mt-6 bg-green-600 hover:bg-green-500 px-8 py-3 rounded-xl font-bold transition-all shadow-lg w-full text-center">WhatsApp এ মেসেজ করুন →</a></div>
     </div>
   </div>
 </section>
 
-<!-- ========== FOOTER ========== -->
-<footer class="bg-slate-900 text-slate-300 pt-14 pb-7">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
-    <div><h3 class="text-white text-xl font-bold flex items-center gap-2"><i class="fas fa-microchip"></i> IT Media Service</h3><p class="text-sm mt-3">নির্ভরতার নামে আধুনিক সমাধান। আইটি, প্রিন্ট ও ডিজিটাল একসাথে।</p></div>
-    <div><h4 class="text-white font-semibold mb-3">দ্রুত লিংক</h4><ul class="space-y-2 text-sm"><li><a href="#services" class="hover:text-white"><i class="fas fa-angle-right"></i> সেবাসমূহ</a></li><li><a href="#print"><i class="fas fa-angle-right"></i> প্রিন্ট ও ফ্রেম</a></li><li><a href="#contact"><i class="fas fa-angle-right"></i> যোগাযোগ</a></li></ul></div>
-    <div><h4 class="text-white font-semibold mb-3">অফিস সময়</h4><p>সোম-বৃহঃ ৯am-৯pm</p><p>শুক্রবার: বন্ধ</p><p>শনিবার: ১০am-৭pm</p><div class="flex gap-5 mt-4 text-xl"><a href="https://wa.me/8801814502810" class="hover:text-green-400"><i class="fab fa-whatsapp"></i></a><a href="#" class="hover:text-blue-400"><i class="fab fa-facebook"></i></a></div></div>
-  </div>
-  <div class="text-center text-sm text-slate-500 border-t border-slate-800 mt-10 pt-6">© 2026 IT Media Service Center — সম্পূর্ণ পেশাদার ডিজিটাল সেবা</div>
-</footer>
+<!-- ========== ফুটার ========== -->
+<footer class="bg-slate-950 text-slate-400 py-10 px-6 border-t border-slate-800"><div class="max-w-7xl mx-auto text-center"><p>© 2026 IT Media Service Center — প্রিমিয়াম আইটি & ডিজিটাল সলিউশন</p><div class="flex justify-center gap-6 mt-5"><a href="https://wa.me/8801814502810" class="hover:text-green-400"><i class="fab fa-whatsapp"></i></a><a href="#" class="hover:text-white"><i class="fab fa-facebook"></i></a><a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a></div></div></footer>
 
-<!-- ========== MODALS (সার্ভিস ডিটেইলস) ========== -->
-<div id="modal1" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300 modal-transition" onclick="closeModal(event)">
-  <div class="bg-white rounded-2xl max-w-md w-full mx-4 p-7 shadow-2xl transform scale-95 transition-all" onclick="event.stopPropagation()">
-    <div class="flex justify-between items-center"><h3 class="text-2xl font-bold">💻 কম্পিউটার সার্ভিসিং</h3><button onclick="closeModal('modal1')" class="text-gray-400 text-2xl">&times;</button></div>
-    <p class="text-gray-600 mt-3">✅ সফটওয়্যার ও হার্ডওয়্যার রিপেয়ার<br>✅ উইন্ডোজ / ম্যাক সেটআপ<br>✅ ভাইরাস রিমুভ + ড্রাইভার ইন্সটল<br>✅ ডেটা ব্যাকআপ সাপোর্ট</p>
-    <a href="https://wa.me/8801814502810" class="mt-5 block bg-indigo-100 text-indigo-800 text-center py-2 rounded-xl font-medium">হোয়াটসঅ্যাপে জানতে চান</a>
-  </div>
-</div>
-<div id="modal2" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300" onclick="closeModal(event)"><div class="bg-white rounded-2xl max-w-md w-full p-7" onclick="event.stopPropagation()"><div class="flex justify-between"><h3 class="text-2xl font-bold">🖨 প্রিন্ট সমাধান</h3><button onclick="closeModal('modal2')" class="text-2xl">&times;</button></div><p class="mt-3">📄 কালার/ব্ল্যাক এন্ড হোয়াইট প্রিন্ট<br>📇 ফ্লাইয়ার, লিফলেট ও ব্রোশিওর<br>🔍 ফটোকপি ও স্ক্যান সার্ভিস</p><a href="https://wa.me/8801814502810" class="mt-4 inline-block bg-green-100 text-green-800 py-2 px-4 rounded-xl">প্রাইস শিডিউল</a></div></div>
-<div id="modal3" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 opacity-0 invisible transition-all" onclick="closeModal(event)"><div class="bg-white rounded-2xl max-w-md w-full p-7" onclick="event.stopPropagation()"><div class="flex justify-between"><h3 class="text-2xl font-bold">📑 অনলাইন আবেদন</h3><button onclick="closeModal('modal3')" class="text-2xl">&times;</button></div><p>পাসপোর্ট ফর্ম ফিলাপ, এনআইডি সংশোধন, সরকারি চাকরির আবেদন, বিশ্ববিদ্যালয় ভর্তি ফর্ম। ১০০% সঠিক নির্দেশনা।</p><a href="https://wa.me/8801814502810" class="mt-4 inline-block bg-indigo-50 py-2 px-4 rounded-xl">সার্ভিস নিতে ক্লিক</a></div></div>
-<div id="modal4" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 opacity-0 invisible transition-all" onclick="closeModal(event)"><div class="bg-white rounded-2xl max-w-md w-full p-7" onclick="event.stopPropagation()"><div class="flex justify-between"><h3 class="text-2xl font-bold">🎨 গ্রাফিক ডিজাইন</h3><button onclick="closeModal('modal4')" class="text-2xl">&times;</button></div><p>সোশ্যাল মিডিয়া পোস্ট, বিজনেস কার্ড, রেস্টুরেন্ট মেনু, ইভেন্ট ব্যানার — কাস্টম ডিজাইন সর্বনিম্ন ১৫০ টাকা থেকে।</p><a href="https://wa.me/8801814502810" class="mt-4 block">WhatsApp এ উদাহরণ দেখুন</a></div></div>
-<div id="modal5" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 opacity-0 invisible transition-all" onclick="closeModal(event)"><div class="bg-white rounded-2xl max-w-md w-full p-7" onclick="event.stopPropagation()"><div class="flex justify-between"><h3 class="text-2xl font-bold">🌐 অনলাইন সাপোর্ট</h3><button onclick="closeModal('modal5')" class="text-2xl">&times;</button></div><p>ইন্টারনেট ইস্যু, সফটওয়্যার কনফিগারেশন, ইমেইল সেটিং, টিম ভিউয়ার সাপোর্ট। অফিস ও হোম ইউজারদের জন্য দূরবর্তী সমাধান।</p><a href="https://wa.me/8801814502810" class="mt-4 inline-block">সাপোর্ট রিকোয়েস্ট</a></div></div>
-<div id="modal6" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 opacity-0 invisible transition-all" onclick="closeModal(event)"><div class="bg-white rounded-2xl max-w-md w-full p-7" onclick="event.stopPropagation()"><div class="flex justify-between"><h3 class="text-2xl font-bold">⚡ এক্সপ্রেস মোড</h3><button onclick="closeModal('modal6')" class="text-2xl">&times;</button></div><p>যেকোনো জরুরি প্রিন্ট/আইটি ইস্যুতে এক্সপ্রেস চার্জে দ্রুত সমাধান। সিলেট শহরের মধ্যে ২ ঘণ্টায় ডেলিভারি সম্ভব।</p><a href="https://wa.me/8801814502810" class="mt-4 block bg-amber-100 py-2 text-center rounded-xl">এক্সপ্রেস রিকোয়েস্ট</a></div></div>
+<!-- ========== মডাল স্ট্রাকচার (সার্ভিস ডিটেইল) ========== -->
+<div id="modalPc" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center opacity-0 invisible transition-all duration-300" onclick="closeServiceModal()"><div class="bg-white rounded-2xl max-w-md w-full mx-4 p-6 shadow-2xl" onclick="event.stopPropagation()"><div class="flex justify-between items-center"><h3 class="text-2xl font-bold">💻 কম্পিউটার কেয়ার</h3><button onclick="closeServiceModal()" class="text-gray-400 text-2xl">&times;</button></div><div class="mt-4 space-y-2"><p><i class="fas fa-check-circle text-green-500"></i> ওএস রিইন্সটল ও অ্যাক্টিভেশন</p><p><i class="fas fa-check-circle text-green-500"></i> ভাইরাস রিমুভ + স্পিড অপটিমাইজ</p><p><i class="fas fa-check-circle text-green-500"></i> হার্ডওয়্যার ডায়াগনস্টিক ও রিপ্লেসমেন্ট</p><p><i class="fas fa-check-circle text-green-500"></i> ডেটা রিকভারি ও ব্যাকআপ</p></div><a href="https://wa.me/8801814502810" class="mt-5 block bg-indigo-600 text-white text-center py-2 rounded-xl font-semibold">এখনই বুক করুন</a></div></div>
+<div id="modalPrint" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center" onclick="closeServiceModal()"><div class="bg-white rounded-2xl max-w-md w-full mx-4 p-6" onclick="event.stopPropagation()"><div class="flex justify-between"><h3 class="text-2xl font-bold">🖨️ প্রো প্রিন্ট</h3><button onclick="closeServiceModal()" class="text-2xl">&times;</button></div><div class="mt-4 space-y-2"><p>✅ ব্রোশিওর, লেটারহেড, ফ্লাইয়ার প্রিন্ট</p><p>✅ রঙিন ও ব্ল্যাক এন্ড হোয়াইট ফটোকপি</p><p>✅ স্ক্যান ও ডিজিটাল কপি</p></div><a href="https://wa.me/8801814502810" class="mt-5 block bg-emerald-600 text-white text-center py-2 rounded-xl">অর্ডার করুন</a></div></div>
+<div id="modalForm" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center" onclick="closeServiceModal()"><div class="bg-white rounded-2xl max-w-md w-full p-6"><div class="flex justify-between"><h3 class="text-2xl font-bold">📑 আবেদন সার্ভিস</h3><button onclick="closeServiceModal()" class="text-2xl">&times;</button></div><p class="mt-3">পাসপোর্ট, ভিসা, চাকরি, বিশ্ববিদ্যালয় অ্যাডমিশন — অভিজ্ঞ টিম ১০০% ভুল মুক্ত ফিলাপ।</p><a href="https://wa.me/8801814502810" class="mt-5 block bg-amber-600 text-white text-center py-2 rounded-xl">যোগাযোগ করুন</a></div></div>
+<div id="modalDesign" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center" onclick="closeServiceModal()"><div class="bg-white rounded-2xl max-w-md p-6"><div class="flex justify-between"><h3 class="text-2xl font-bold">🎨 ক্রিয়েটিভ ডিজাইন</h3><button onclick="closeServiceModal()" class="text-2xl">&times;</button></div><p>সোশ্যাল মিডিয়া পোস্ট, ব্যানার, বিজনেস কার্ড, ফেসবুক কভার ডিজাইন। কাস্টম রিকোয়েস্ট নেওয়া হয়।</p><a href="https://wa.me/8801814502810" class="mt-5 block bg-rose-600 text-white text-center py-2 rounded-xl">ডিজাইন কনসাল্ট</a></div></div>
+<div id="modalSupport" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center" onclick="closeServiceModal()"><div class="bg-white rounded-2xl max-w-md p-6"><div class="flex justify-between"><h3 class="text-2xl font-bold">🌐 অনলাইন সাপোর্ট</h3><button onclick="closeServiceModal()" class="text-2xl">&times;</button></div><p>রিমোট এসিস্ট্যান্স, যে কোনো সফটওয়্যার কনফিগার, নেটওয়ার্ক সেটআপ ও ইমেইল ইস্যু সলভ।</p><a href="https://wa.me/8801814502810" class="mt-5 block bg-cyan-600 text-white text-center py-2 rounded-xl">সাপোর্ট নিন</a></div></div>
+<div id="modalExpress" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center" onclick="closeServiceModal()"><div class="bg-white rounded-2xl max-w-md p-6"><div class="flex justify-between"><h3 class="text-2xl font-bold">⚡ এক্সপ্রেস</h3><button onclick="closeServiceModal()" class="text-2xl">&times;</button></div><p>এক্সপ্রেস চার্জে ২-৪ ঘণ্টায় প্রিন্ট / ফ্রেম ডেলিভারি ও জরুরী আইটি সার্ভিস।</p><a href="https://wa.me/8801814502810" class="mt-5 block bg-purple-600 text-white text-center py-2 rounded-xl">এক্সপ্রেস বুক</a></div></div>
 
 <script>
-  function openModal(modalId) {
+  function openServiceModal(modalId) {
+    document.querySelectorAll('[id^="modal"]').forEach(modal => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    });
     const modal = document.getElementById(modalId);
-    if (modal) {
-      modal.classList.remove('opacity-0', 'invisible');
-      modal.classList.add('opacity-100', 'visible');
+    if(modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      modal.style.opacity = '1';
+      modal.style.visibility = 'visible';
       document.body.style.overflow = 'hidden';
     }
   }
-  function closeModal(eventOrId) {
-    if (typeof eventOrId === 'string') {
-      const modal = document.getElementById(eventOrId);
-      if(modal) {
-        modal.classList.add('opacity-0', 'invisible');
-        modal.classList.remove('opacity-100', 'visible');
-        document.body.style.overflow = 'auto';
-      }
-    } else {
-      if(eventOrId.target === eventOrId.currentTarget) {
-        const modals = document.querySelectorAll('.fixed.inset-0.bg-black\\/50');
-        modals.forEach(m => {
-          m.classList.add('opacity-0', 'invisible');
-          m.classList.remove('opacity-100', 'visible');
-        });
-        document.body.style.overflow = 'auto';
-      }
-    }
+  function closeServiceModal() {
+    document.querySelectorAll('[id^="modal"]').forEach(modal => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    });
+    document.body.style.overflow = 'auto';
   }
   window.onclick = function(e) {
-    if(e.target.classList && e.target.classList.contains('backdrop-blur-sm')) {
-      document.querySelectorAll('.fixed.inset-0').forEach(m => {
-        m.classList.add('opacity-0', 'invisible');
-        document.body.style.overflow = 'auto';
-      });
-    }
+    if(e.target.classList && e.target.classList.contains('backdrop-blur-sm')) closeServiceModal();
   }
 </script>
 </body>
