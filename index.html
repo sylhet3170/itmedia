@@ -1,153 +1,126 @@
 <!DOCTYPE html><html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IT Media Service | পূর্ণাঙ্গ ডিজিটাল সেবা কেন্দ্র</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap');
-    * { font-family: 'Inter', sans-serif; margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    .premium-nav {
-      background: rgba(10, 25, 47, 0.92);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .hero-grad {
-      background: linear-gradient(135deg, #0B1120 0%, #111827 50%, #1E1B4B 100%);
-    }
-    .card-hover {
-      transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-    }
-    .card-hover:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 35px -15px rgba(0,0,0,0.25);
-    }
-    .btn-grad {
-      background: linear-gradient(95deg, #4F46E5, #7C3AED);
-      transition: all 0.2s;
-    }
-    .btn-grad:hover {
-      transform: scale(1.03);
-      box-shadow: 0 15px 20px -10px rgba(79,70,229,0.4);
-    }
-    .section-badge {
-      background: rgba(79,70,229,0.12);
-      backdrop-filter: blur(4px);
-      border-radius: 40px;
-    }
-    .frame-img {
-      background-size: cover;
-      background-position: center;
-      transition: transform 0.5s;
-    }
-    .group:hover .frame-img {
-      transform: scale(1.08);
-    }
-  </style>
-</head>
-<body class="bg-gray-50 text-gray-800"><nav class="fixed top-0 w-full z-50 premium-nav transition-all">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <div class="flex justify-between items-center h-16 lg:h-20">
-      <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg">
-          <i class="fas fa-microchip text-white text-sm"></i>
-        </div>
-        <span class="font-extrabold text-xl text-white">IT Media<span class="text-indigo-300">Service</span></span>
-      </div>
-      <div class="hidden md:flex gap-7 text-sm font-semibold text-gray-200">
-        <a href="#home" class="hover:text-white transition">হোম</a>
-        <a href="#services" class="hover:text-white transition">সেবাসমূহ</a>
-        <a href="#products" class="hover:text-white transition">প্রিন্ট ও পণ্য</a>
-        <a href="#contact" class="hover:text-white transition">যোগাযোগ</a>
-      </div>
-      <a href="https://wa.me/8801814502810" target="_blank" class="bg-white/10 backdrop-blur-sm text-white px-5 py-2 rounded-full text-sm font-semibold border border-white/20 hover:bg-white/20 transition flex items-center gap-2">
-        <i class="fab fa-whatsapp text-green-400"></i> হোয়াটসঅ্যাপ
-      </a>
-    </div>
-  </div>
-</nav><section id="home" class="relative pt-32 pb-24 md:pt-40 md:pb-32 hero-grad overflow-hidden">
-  <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/circuit-board.png')]"></div>
-  <div class="relative z-10 max-w-6xl mx-auto text-center px-6">
-    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-5 py-2 text-indigo-200 text-sm border border-white/20 mb-6">
-      <i class="fas fa-certificate"></i> নির্ভরযোগ্য সেবা কেন্দ্র - ২০২৬
-    </div>
-    <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">সকল ডিজিটাল ও <span class="bg-gradient-to-r from-indigo-300 to-purple-300 bg-clip-text text-transparent">অফলাইন সেবা</span> এক ঠিকানায়</h1>
-    <p class="text-lg text-gray-300 max-w-2xl mx-auto mt-5">পাসপোর্ট থেকে পুলিশ ক্লিয়ারেন্স, মগ প্রিন্ট থেকে ফ্রেম ক্রেস্ট — পেশাদারিত্ব ও গুণগত মানের প্রতিশ্রুতি।</p>
-    <div class="flex flex-wrap justify-center gap-5 mt-8">
-      <a href="#services" class="btn-grad text-white px-7 py-3 rounded-xl font-bold shadow-xl flex items-center gap-2"><i class="fas fa-list-ul"></i> সেবা দেখুন</a>
-      <a href="https://wa.me/8801814502810" class="bg-white/10 border border-white/30 text-white px-7 py-3 rounded-xl font-semibold hover:bg-white/20 transition flex items-center gap-2"><i class="fab fa-whatsapp"></i> সরাসরি অর্ডার</a>
-    </div>
-  </div>
-</section><section id="services" class="py-24 px-6 bg-white">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-14">
-      <span class="section-badge text-indigo-700 px-5 py-1.5 text-sm font-semibold inline-block"><i class="fas fa-star-of-life mr-1"></i> আমাদের এক্সক্লুসিভ সেবা</span>
-      <h2 class="text-3xl md:text-4xl font-extrabold mt-5 text-gray-800">সকল প্রকার ডিজিটাল ও গভর্নমেন্ট সার্ভিস</h2>
-    </div><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-  <div class="bg-gray-50 p-5 rounded-xl shadow-sm border border-gray-100 card-hover">
-    <div class="flex items-center gap-3">
-      <i class="fas fa-passport text-2xl text-indigo-600"></i>
-      <span class="font-bold">পাসপোর্ট আবেদন</span>
-    </div>
-    <p class="text-sm text-gray-500 mt-2">অনলাইন ফিলআপ, ডেলিভারি ট্র্যাকিং সহ সম্পূর্ণ গাইড</p>
-  </div> 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IT Media Service | পূর্ণাঙ্গ ডিজিটাল সেবা কেন্দ্র</title>  <script src="https://cdn.tailwindcss.com"></script>  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-  <div class="bg-gray-50 p-5 rounded-xl shadow-sm border border-gray-100 card-hover">
-    <div class="flex items-center gap-3">
-      <i class="fas fa-id-card text-2xl text-indigo-600"></i>
-      <span class="font-bold">এনআইডি কার্ড</span>
-    </div>
-    <p class="text-sm text-gray-500 mt-2">এনআইডি সংশোধন, ডুপ্লিকেট ও আপডেট সার্ভিস</p>
-  </div> 
+    *{
+      font-family:'Inter',sans-serif;
+      box-sizing:border-box;
+    }
 
-  <div class="bg-gray-50 p-5 rounded-xl shadow-sm border border-gray-100 card-hover">
-    <div class="flex items-center gap-3">
-      <i class="fas fa-shield-alt text-2xl text-indigo-600"></i>
-      <span class="font-bold">পুলিশ ক্লিয়ারেন্স</span>
-    </div>
-    <p class="text-sm text-gray-500 mt-2">সব দেশের পুলিশ ক্লিয়ারেন্স সার্ভিস</p>
-  </div>
-</div> 
+    html{scroll-behavior:smooth;}
 
-  </div>
-</section><section id="products" class="py-24 px-6 bg-gradient-to-br from-indigo-50 to-white">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-14">
-      <h2 class="text-3xl md:text-4xl font-extrabold">🎁 প্রিমিয়াম প্রিন্ট ও পণ্য</h2>
-    </div><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-  <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all">
-    <div class="h-56 overflow-hidden bg-gray-200">
-      <div class="frame-img w-full h-full bg-cover" style="background-image: url('https://images.pexels.com/photos/1571460/art-frame-picture-display-1571460.jpeg?auto=compress&cs=tinysrgb&w=600');"></div>
-    </div>
-    <div class="p-5">
-      <h3 class="font-bold text-xl">ফ্রেম ক্রেস্ট</h3>
-      <p class="text-gray-500 text-sm">কাস্টম ডিজাইন ও প্রিন্ট</p>
-    </div>
-  </div> 
+    body{
+      margin:0;
+      padding:0;
+    }
 
-  <div class="group bg-white rounded-2xl overflow-hidden shadow-md">
-    <div class="h-56 overflow-hidden">
-      <div class="frame-img w-full h-full bg-cover" style="background-image: url('https://images.pexels.com/photos/987586/pexels-photo-987586.jpeg?auto=compress&cs=tinysrgb&w=600');"></div>
-    </div>
-    <div class="p-5">
-      <h3 class="font-bold text-xl">মগ প্রিন্ট</h3>
-      <p class="text-gray-500">ফটো ও লোগো প্রিন্ট</p>
-    </div>
-  </div>
-</div> 
+    .premium-nav{
+      background:rgba(10,25,47,0.92);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
 
-  </div>
-</section><section id="contact" class="py-24 px-6 bg-slate-900 text-white">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl md:text-5xl font-extrabold">যোগাযোগ করুন</h2>
-    <p class="text-gray-300 mt-4">WhatsApp অথবা ফোনে যোগাযোগ করুন</p>
-    <a href="https://wa.me/8801814502810" target="_blank" class="mt-6 inline-block bg-green-600 hover:bg-green-500 px-8 py-3 rounded-xl font-bold shadow-lg transition">
-      WhatsApp মেসেজ
-    </a>
-  </div>
-</section><footer class="bg-slate-950 text-slate-400 py-8 px-6 text-center border-t border-slate-800">
-  <p>© 2026 IT Media Service Center</p>
-</footer></body>
-</html>
+    .hero-grad{
+      background:linear-gradient(135deg,#0B1120 0%,#111827 50%,#1E1B4B 100%);
+    }
+
+    .card-hover{
+      transition:all .3s ease;
+    }
+
+    .card-hover:hover{
+      transform:translateY(-6px);
+      box-shadow:0 20px 30px rgba(0,0,0,0.15);
+    }
+
+    .btn-grad{
+      background:linear-gradient(95deg,#4F46E5,#7C3AED);
+    }
+
+    .frame-img{
+      transition:transform .5s;
+    }
+
+    .group:hover .frame-img{
+      transform:scale(1.06);
+    }
+
+    /* MOBILE FIX */
+    @media(max-width:768px){
+      .hero-title{
+        font-size:2.2rem;
+        line-height:1.2;
+      }
+
+      .nav-links{
+        display:none;
+      }
+    }
+  </style></head><body class="bg-gray-50 text-gray-800"><!-- NAV --><nav class="fixed top-0 w-full z-50 premium-nav">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="flex justify-between items-center h-16"><div class="flex items-center gap-3">
+    <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+      <i class="fas fa-microchip text-white text-sm"></i>
+    </div>
+    <span class="font-bold text-white">IT Media <span class="text-indigo-300">Service</span></span>
+  </div>
+
+  <div class="nav-links flex gap-6 text-sm text-gray-200 font-medium">
+    <a href="#home">হোম</a>
+    <a href="#services">সেবা</a>
+    <a href="#products">পণ্য</a>
+    <a href="#contact">যোগাযোগ</a>
+  </div>
+
+  <a href="https://wa.me/8801814502810" class="bg-white/10 px-4 py-2 rounded-full text-white text-sm border border-white/20">
+    WhatsApp
+  </a>
+
+</div>
+
+  </div>
+</nav><!-- HERO --><section id="home" class="pt-28 pb-20 hero-grad text-center px-5">
+  <h1 class="hero-title text-white font-extrabold text-5xl">
+    সব ডিজিটাল সার্ভিস <br/> এক ঠিকানায়
+  </h1>
+  <p class="text-gray-300 mt-4 max-w-2xl mx-auto">
+    পাসপোর্ট, এনআইডি, পুলিশ ক্লিয়ারেন্স থেকে শুরু করে প্রিন্ট ও ডিজাইন সেবা
+  </p>  <div class="mt-6 flex justify-center gap-4 flex-wrap">
+    <a href="#services" class="btn-grad text-white px-6 py-3 rounded-xl font-semibold">
+      সেবা দেখুন
+    </a>
+    <a href="https://wa.me/8801814502810" class="bg-white/10 px-6 py-3 rounded-xl text-white">
+      অর্ডার করুন
+    </a>
+  </div>
+</section><!-- SERVICES --><section id="services" class="py-20 px-5 bg-white">
+  <div class="max-w-6xl mx-auto"><h2 class="text-center text-3xl font-bold mb-10">আমাদের সেবা</h2>
+
+<div class="grid md:grid-cols-3 gap-6">
+
+  <div class="p-5 bg-gray-50 rounded-xl card-hover">
+    <i class="fas fa-passport text-indigo-600 text-2xl"></i>
+    <h3 class="font-bold mt-2">পাসপোর্ট আবেদন</h3>
+    <p class="text-sm text-gray-500">সম্পূর্ণ গাইড সহ সার্ভিস</p>
+  </div>
+
+  <div class="p-5 bg-gray-50 rounded-xl card-hover">
+    <i class="fas fa-id-card text-indigo-600 text-2xl"></i>
+    <h3 class="font-bold mt-2">এনআইডি সার্ভিস</h3>
+    <p class="text-sm text-gray-500">সংশোধন ও আপডেট</p>
+  </div>
+
+  <div class="p-5 bg-gray-50 rounded-xl card-hover">
+    <i class="fas fa-shield-alt text-indigo-600 text-2xl"></i>
+    <h3 class="font-bold mt-2">পুলিশ ক্লিয়ারেন্স</h3>
+    <p class="text-sm text-gray-500">দ্রুত প্রসেসিং</p>
+  </div>
+
+</div>
+
+  </div>
+</section><!-- PRODUCTS --><section id="products" class="py-20 px-5 bg-gradient-to-br from-indigo-50 to-white">
+  <div class="max
