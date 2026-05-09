@@ -1,139 +1,348 @@
+Here is an improved, super-stylish, and more polished version of your IT Media Service Center website. It maintains the same structure and information but enhances the visual appeal, adds subtle animations, modern card designs, and a professional touch.
+
+```html
 <!DOCTYPE html>
 <html lang="bn">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IT Media Service Center</title>
+  <title>IT Media Service Center | ডিজিটাল সমাধান</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* custom smooth scroll & subtle glow effects */
+    html {
+      scroll-behavior: smooth;
+    }
+    .hover-glow {
+      transition: all 0.25s ease;
+    }
+    .hover-glow:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(59,130,246,0.3);
+    }
+    .card-shadow {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .hero-pattern {
+      background-image: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.05) 2%, transparent 2.5%);
+      background-size: 28px 28px;
+    }
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+    }
+    .btn-whatsapp-pulse {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+      animation: pulse-wa 2s infinite;
+    }
+    @keyframes pulse-wa {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+    .service-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: #eef2ff;
+      border-radius: 1.2rem;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
-<body class="bg-gray-50 text-gray-800 scroll-smooth">
-
-<!-- NAVBAR -->
-<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-gray-200">
-  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <h1 class="text-xl font-bold text-blue-700">IT Media Service</h1>
-    <div class="hidden md:flex gap-6 text-sm font-medium">
-      <a href="#services" class="hover:text-blue-600">সার্ভিস</a>
-      <a href="#print" class="hover:text-blue-600">প্রিন্ট</a>
-      <a href="#contact" class="hover:text-blue-600">যোগাযোগ</a>
+<!-- ========== STICKY NAVBAR (Glassmorphism enhanced) ========== -->
+<nav class="sticky top-0 z-50 glass-nav transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <i class="fas fa-laptop-code text-2xl text-blue-700"></i>
+      <h1 class="text-xl md:text-2xl font-extrabold tracking-tight bg-gradient-to-r from-blue-800 to-indigo-700 bg-clip-text text-transparent">IT Media Service</h1>
     </div>
-    <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-xl text-sm hover:bg-blue-700">
-      যোগাযোগ করুন
+    <div class="hidden md:flex gap-8 text-sm font-medium">
+      <a href="#services" class="hover:text-blue-700 transition flex items-center gap-1"><i class="fas fa-cogs text-xs"></i> সার্ভিস</a>
+      <a href="#print" class="hover:text-blue-700 transition flex items-center gap-1"><i class="fas fa-print text-xs"></i> প্রিন্ট & ফ্রেম</a>
+      <a href="#contact" class="hover:text-blue-700 transition flex items-center gap-1"><i class="fas fa-phone-alt text-xs"></i> যোগাযোগ</a>
+    </div>
+    <a href="#contact" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-md hover:shadow-xl transition-all hover:scale-105 flex items-center gap-2">
+      <i class="fas fa-headset"></i> যোগাযোগ করুন
     </a>
   </div>
 </nav>
 
-<!-- HERO -->
-<header class="bg-gradient-to-r from-blue-700 to-indigo-600 text-white py-20 px-6 text-center">
-  <h1 class="text-4xl md:text-5xl font-bold">IT Media Service Center</h1>
-  <p class="mt-4 text-lg md:text-xl text-blue-100">সকল ডিজিটাল ও অনলাইন সার্ভিস একসাথে এক জায়গায়</p>
-  <a href="#services" class="inline-block mt-8 bg-white text-blue-700 font-semibold px-6 py-3 rounded-2xl shadow hover:scale-105 transition">
-    আমাদের সার্ভিস দেখুন
-  </a>
+<!-- ========== HERO SECTION (modern gradient + soft pattern) ========== -->
+<header class="relative overflow-hidden bg-gradient-to-br from-blue-800 via-indigo-800 to-indigo-900 text-white py-24 px-6 text-center hero-pattern">
+  <div class="relative z-10 max-w-4xl mx-auto">
+    <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm mb-6 tracking-wide">
+      <i class="fas fa-microchip text-white"></i>
+      <span>ডিজিটাল ট্রাস্ট সেন্টার ২০২৬</span>
+    </div>
+    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">IT Media <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-amber-300">Service Center</span></h1>
+    <p class="mt-5 text-lg md:text-xl text-blue-100 max-w-2xl mx-auto">সকল ডিজিটাল, অনলাইন ও প্রিন্ট সার্ভিস — দ্রুত, নির্ভরযোগ্য ও সাশ্রয়ী মূল্যে।</p>
+    <div class="mt-8 flex flex-wrap justify-center gap-4">
+      <a href="#services" class="bg-white text-blue-800 font-bold px-7 py-3 rounded-full shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-2"><i class="fas fa-arrow-down"></i> আমাদের সার্ভিস</a>
+      <a href="https://wa.me/8801814502810" target="_blank" class="bg-green-600 hover:bg-green-500 px-7 py-3 rounded-full shadow-lg transition-all flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp এ অর্ডার করুন</a>
+    </div>
+  </div>
+  <!-- abstract wave bottom -->
+  <div class="absolute bottom-0 w-full">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" class="w-full text-gray-50 fill-current">
+      <path d="M0,32L80,37.3C160,43,320,53,480,53.3C640,53,800,43,960,37.3C1120,32,1280,32,1360,32L1440,32L1440,80L1360,80C1280,80,1120,80,960,80C800,80,640,80,480,80C320,80,160,80,80,80L0,80Z"></path>
+    </svg>
+  </div>
 </header>
 
-<!-- SERVICES -->
-<section id="services" class="max-w-6xl mx-auto px-6 py-16">
-  <h2 class="text-3xl font-bold text-center mb-10">আমাদের সার্ভিসসমূহ</h2>
+<!-- ========== SERVICES SECTION (grid with icons & hover effects) ========== -->
+<section id="services" class="max-w-7xl mx-auto px-5 md:px-8 py-20">
+  <div class="text-center mb-12">
+    <span class="text-blue-600 font-semibold tracking-wide uppercase bg-blue-50 px-4 py-1.5 rounded-full text-sm"><i class="fas fa-star-of-life mr-1"></i> কি কি সুবিধা</span>
+    <h2 class="text-3xl md:text-4xl font-extrabold mt-4 text-gray-800">আমাদের কোর সার্ভিসসমূহ</h2>
+    <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full mt-5"></div>
+  </div>
 
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-    <div class="bg-white rounded-2xl p-6 shadow hover:shadow-xl transition">
-      <h3 class="text-xl font-semibold text-blue-700">💻 কম্পিউটার সার্ভিসিং</h3>
-      <p class="text-gray-600 mt-2">ডেস্কটপ ও ল্যাপটপ সার্ভিসিং, সফটওয়্যার সেটআপ ও সমস্যা সমাধান।</p>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+    <!-- card 1 -->
+    <div class="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 card-shadow hover-glow transition">
+      <div class="service-icon group-hover:bg-blue-100 transition"><i class="fas fa-desktop text-2xl text-blue-700"></i></div>
+      <h3 class="text-xl font-bold text-gray-800">💻 কম্পিউটার সার্ভিসিং</h3>
+      <p class="text-gray-600 mt-2 leading-relaxed">ডেস্কটপ ও ল্যাপটপ সার্ভিসিং, সফটওয়্যার সেটআপ, ভাইরাস রিমুভ ও সমস্যা সমাধান।</p>
+      <div class="mt-4 text-blue-600 text-sm font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transition">দ্রুত ফিক্স <i class="fas fa-arrow-right"></i></div>
     </div>
 
-    <a href="#print" class="bg-white rounded-2xl p-6 shadow hover:shadow-xl transition block">
-      <h3 class="text-xl font-semibold text-blue-700">🖨️ প্রিন্ট ও ফটোকপি</h3>
-      <p class="text-gray-600 mt-2">ডিজাইন, প্রিন্ট ও ফটোকপি সার্ভিস বিস্তারিত দেখুন।</p>
+    <a href="#print" class="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 card-shadow hover-glow transition block">
+      <div class="service-icon group-hover:bg-indigo-100 transition"><i class="fas fa-print text-2xl text-indigo-600"></i></div>
+      <h3 class="text-xl font-bold text-gray-800">🖨️ প্রিন্ট ও ফটোকপি</h3>
+      <p class="text-gray-600 mt-2 leading-relaxed">ডিজিটাল প্রিন্ট, ফটোকপি, স্ক্যান, ফ্রেম প্রিন্ট — বিস্তারিত দেখুন।</p>
+      <div class="mt-4 text-indigo-600 text-sm font-medium flex items-center gap-1">ডিজাইন কাস্টমাইজেশন <i class="fas fa-arrow-right"></i></div>
     </a>
 
-    <div class="bg-white rounded-2xl p-6 shadow hover:shadow-xl transition">
-      <h3 class="text-xl font-semibold text-blue-700">📝 অনলাইন আবেদন</h3>
-      <p class="text-gray-600 mt-2">পাসপোর্ট, এনআইডি, চাকরি আবেদন ও ফর্ম পূরণ।</p>
+    <div class="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 card-shadow hover-glow transition">
+      <div class="service-icon group-hover:bg-emerald-100 transition"><i class="fas fa-file-alt text-2xl text-emerald-700"></i></div>
+      <h3 class="text-xl font-bold text-gray-800">📝 অনলাইন আবেদন</h3>
+      <p class="text-gray-600 mt-2">পাসপোর্ট, এনআইডি, চাকরির আবেদন, ফর্ম পূরণ ও জমা দেওয়ার সম্পূর্ণ গাইডলাইন।</p>
     </div>
 
-    <div class="bg-white rounded-2xl p-6 shadow hover:shadow-xl transition">
-      <h3 class="text-xl font-semibold text-blue-700">🎨 ডিজাইন সার্ভিস</h3>
-      <p class="text-gray-600 mt-2">ব্যানার, পোস্টার, বিজনেস কার্ড ও সোশ্যাল ডিজাইন।</p>
+    <div class="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 card-shadow hover-glow transition">
+      <div class="service-icon group-hover:bg-rose-100 transition"><i class="fas fa-palette text-2xl text-rose-600"></i></div>
+      <h3 class="text-xl font-bold text-gray-800">🎨 প্রফেশনাল ডিজাইন</h3>
+      <p class="text-gray-600 mt-2">ব্যানার, পোস্টার, বিজনেস কার্ড, সোশ্যাল মিডিয়া পোস্ট — কাস্টম ডিজাইন সেবা।</p>
     </div>
 
-    <div class="bg-white rounded-2xl p-6 shadow hover:shadow-xl transition">
-      <h3 class="text-xl font-semibold text-blue-700">🌐 অনলাইন সাপোর্ট</h3>
-      <p class="text-gray-600 mt-2">যেকোনো ডিজিটাল সমস্যার দ্রুত সমাধান।</p>
+    <div class="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 card-shadow hover-glow transition">
+      <div class="service-icon group-hover:bg-purple-100 transition"><i class="fas fa-headset text-2xl text-purple-700"></i></div>
+      <h3 class="text-xl font-bold text-gray-800">🌐 অনলাইন সাপোর্ট</h3>
+      <p class="text-gray-600 mt-2">যেকোনো ডিজিটাল সমস্যার দূরবর্তী সহায়তা, আইটি কনসালটিং ও গাইডলাইন।</p>
     </div>
 
-    <div class="bg-white rounded-2xl p-6 shadow hover:shadow-xl transition">
-      <h3 class="text-xl font-semibold text-blue-700">⚡ ফাস্ট সার্ভিস</h3>
-      <p class="text-gray-600 mt-2">দ্রুত ও নির্ভরযোগ্য সার্ভিস নিশ্চিত করা হয়।</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- PRINT SECTION -->
-<section id="print" class="bg-gray-100 py-16 px-6">
-  <div class="max-w-6xl mx-auto">
-
-    <h2 class="text-3xl font-bold text-center mb-10">প্রিন্ট ও ফ্রেম ডিজাইন</h2>
-
-    <div class="grid md:grid-cols-3 gap-6">
-
-      <div class="bg-white rounded-2xl shadow p-5 hover:shadow-xl transition">
-        <div class="h-40 bg-gray-200 rounded-xl flex items-center justify-center">Frame 01</div>
-        <h3 class="text-lg font-semibold mt-4">ফ্রেম ডিজাইন - ১</h3>
-        <p class="text-gray-600">রেট: ২০০ টাকা</p>
-        <a href="https://wa.me/8801814502810?text=ফ্রেম%201%20অর্ডার" class="block mt-4 bg-green-600 text-white text-center py-2 rounded-xl hover:bg-green-700">
-          অর্ডার করুন
-        </a>
-      </div>
-
-      <div class="bg-white rounded-2xl shadow p-5 hover:shadow-xl transition">
-        <div class="h-40 bg-gray-200 rounded-xl flex items-center justify-center">Frame 02</div>
-        <h3 class="text-lg font-semibold mt-4">ফ্রেম ডিজাইন - ২</h3>
-        <p class="text-gray-600">রেট: ৩০০ টাকা</p>
-        <a href="https://wa.me/8801814502810?text=ফ্রেম%202%20অর্ডার" class="block mt-4 bg-green-600 text-white text-center py-2 rounded-xl hover:bg-green-700">
-          অর্ডার করুন
-        </a>
-      </div>
-
-      <div class="bg-white rounded-2xl shadow p-5 hover:shadow-xl transition">
-        <div class="h-40 bg-gray-200 rounded-xl flex items-center justify-center">Frame 03</div>
-        <h3 class="text-lg font-semibold mt-4">ফ্রেম ডিজাইন - ৩</h3>
-        <p class="text-gray-600">রেট: ৫০০ টাকা</p>
-        <a href="https://wa.me/8801814502810?text=ফ্রেম%203%20অর্ডার" class="block mt-4 bg-green-600 text-white text-center py-2 rounded-xl hover:bg-green-700">
-          অর্ডার করুন
-        </a>
-      </div>
-
+    <div class="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 card-shadow hover-glow transition">
+      <div class="service-icon group-hover:bg-orange-100 transition"><i class="fas fa-bolt text-2xl text-orange-600"></i></div>
+      <h3 class="text-xl font-bold text-gray-800">⚡ ফাস্ট ট্র্যাক সার্ভিস</h3>
+      <p class="text-gray-600 mt-2">জরুরি কাজের জন্য এক্সপ্রেস ডেলিভারি ও দ্রুত সমাধানের নিশ্চয়তা।</p>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="bg-white py-16 px-6">
-  <div class="max-w-4xl mx-auto text-center">
-
-    <h2 class="text-3xl font-bold mb-6">যোগাযোগ করুন</h2>
-
-    <div class="space-y-2 text-lg">
-      <p>📞 01814502810</p>
-      <p>📍 Sylhet, Bangladesh</p>
-      <p>✉ yourshop@gmail.com</p>
+<!-- ========== PRINT & FRAME SECTION (modern slider style with product cards) ========== -->
+<section id="print" class="bg-gradient-to-b from-gray-50 to-white py-20 px-5 md:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <span class="bg-indigo-100 text-indigo-700 px-5 py-1.5 rounded-full text-sm font-semibold"><i class="fas fa-image mr-1"></i> এক্সক্লুসিভ কালেকশন</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold mt-4 text-gray-800">প্রিন্ট ও ফ্রেম ডিজাইন</h2>
+      <p class="text-gray-600 mt-2 max-w-2xl mx-auto">হাই-কোয়ালিটি ফ্রেম প্রিন্ট, মর্ডান ডিজাইন এবং সাশ্রয়ী মূল্য। ইচ্ছেমতো কাস্টমাইজেশন সম্ভব।</p>
     </div>
 
-    <a href="https://wa.me/8801814502810"
-       class="inline-block mt-8 bg-green-600 text-white px-6 py-3 rounded-2xl hover:bg-green-700">
-      WhatsApp যোগাযোগ
-    </a>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- frame 1 -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+        <div class="relative h-56 bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-white text-2xl font-bold">
+          <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition"></div>
+          <i class="fas fa-frame text-6xl opacity-80"></i>
+          <span class="relative z-10 ml-3 text-2xl shadow_text">PREMIUM</span>
+        </div>
+        <div class="p-5">
+          <div class="flex justify-between items-center">
+            <h3 class="text-xl font-bold text-gray-800">ফ্রেম ডিজাইন – এলিগেন্ট</h3>
+            <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-bold">২০০ ৳</span>
+          </div>
+          <p class="text-gray-500 text-sm mt-2">ম্যাট ফিনিশ, কাঠের টেক্সচার ফ্রেম, যেকোনো ছবির জন্য উপযোগী।</p>
+          <a href="https://wa.me/8801814502810?text=হাই,%20আমি%20এলিগেন্ট%20ফ্রেম%20ডিজাইন%20(২০০%20টাকা)%20অর্ডার%20করতে%20চাই।" target="_blank" class="mt-5 flex items-center justify-center gap-2 w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white py-2.5 rounded-xl font-medium hover:shadow-md transition transform hover:scale-[1.02]"><i class="fab fa-whatsapp"></i> অর্ডার করুন</a>
+        </div>
+      </div>
+
+      <!-- frame 2 -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+        <div class="relative h-56 bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white text-2xl font-bold">
+          <i class="fas fa-crown text-5xl opacity-70"></i>
+          <span class="ml-2">মেটালিক আর্ট</span>
+        </div>
+        <div class="p-5">
+          <div class="flex justify-between items-center">
+            <h3 class="text-xl font-bold text-gray-800">ফ্রেম ডিজাইন – রয়্যাল</h3>
+            <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-bold">৩০০ ৳</span>
+          </div>
+          <p class="text-gray-500 text-sm mt-2">মোডার্ন মেটালিক ফিনিশ, গ্লসি লুক, সাটিন এজ — প্রাচীর সাজাতে অনন্য।</p>
+          <a href="https://wa.me/8801814502810?text=হাই,%20আমি%20রoyal%20মেটালিক%20ফ্রেম%20(৩০০%20টাকা)%20অর্ডার%20করতে%20চাই।" target="_blank" class="mt-5 flex items-center justify-center gap-2 w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white py-2.5 rounded-xl font-medium hover:shadow-md transition transform hover:scale-[1.02]"><i class="fab fa-whatsapp"></i> অর্ডার করুন</a>
+        </div>
+      </div>
+
+      <!-- frame 3 -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+        <div class="relative h-56 bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center text-white text-2xl font-bold">
+          <i class="fas fa-gem text-5xl"></i>
+          <span class="ml-2">প্রিমিয়াম কালেকশন</span>
+        </div>
+        <div class="p-5">
+          <div class="flex justify-between items-center">
+            <h3 class="text-xl font-bold text-gray-800">ফ্রেম ডিজাইন – প্রিমিয়াম</h3>
+            <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-bold">৫০০ ৳</span>
+          </div>
+          <p class="text-gray-500 text-sm mt-2">থ্রি-লেয়ার ফিনিশিং, হস্তশিল্পের ছোঁয়া, এবং UV প্রিন্ট অপশন।</p>
+          <a href="https://wa.me/8801814502810?text=আমি%20প্রিমিয়াম%20ফ্রেম%20(৫০০%20টাকা)%20টি%20অর্ডার%20করতে%20চাই।" target="_blank" class="mt-5 flex items-center justify-center gap-2 w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white py-2.5 rounded-xl font-medium hover:shadow-md transition transform hover:scale-[1.02]"><i class="fab fa-whatsapp"></i> অর্ডার করুন</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional note -->
+    <div class="mt-12 text-center bg-indigo-50 rounded-2xl p-5 max-w-3xl mx-auto border border-indigo-100">
+      <p class="text-gray-700"><i class="fas fa-pen-fancy text-indigo-500 mr-2"></i> আপনার নিজের ডিজাইন বা ছবি থাকলে কাস্টম ফ্রেম তৈরি করে দেওয়া হয়। <a href="https://wa.me/8801814502810" target="_blank" class="font-bold text-indigo-700 underline">WhatsApp এ জানান</a></p>
+    </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="bg-gray-900 text-white text-center py-6">
-  <p>© 2026 IT Media Service Center. All Rights Reserved.</p>
+<!-- ========== CONTACT SECTION (modern card with social & map vibe) ========== -->
+<section id="contact" class="py-20 px-5 md:px-8 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800">যোগাযোগ করুন</h2>
+      <div class="w-20 h-1 bg-blue-500 mx-auto rounded-full mt-3"></div>
+      <p class="text-gray-500 mt-3">যেকোনো প্রয়োজনে আমাদের সাথে সরাসরি যোগাযোগ করুন। দ্রুত সেবা পেতে হোয়াটসঅ্যাপ মেসেজ করুন।</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <!-- left info cards -->
+      <div class="space-y-6">
+        <div class="flex items-center gap-5 bg-gray-50 p-5 rounded-2xl shadow-sm hover:shadow-md transition">
+          <div class="bg-blue-100 p-3 rounded-full">
+            <i class="fas fa-phone-alt text-blue-700 text-xl"></i>
+          </div>
+          <div>
+            <p class="text-sm text-gray-500">ফোন (হটলাইন)</p>
+            <p class="text-xl font-bold text-gray-800">01814502810</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-5 bg-gray-50 p-5 rounded-2xl shadow-sm hover:shadow-md transition">
+          <div class="bg-green-100 p-3 rounded-full">
+            <i class="fab fa-whatsapp text-green-600 text-xl"></i>
+          </div>
+          <div>
+            <p class="text-sm text-gray-500">হোয়াটসঅ্যাপ</p>
+            <p class="text-xl font-bold text-gray-800">+880 1814-502810</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-5 bg-gray-50 p-5 rounded-2xl shadow-sm hover:shadow-md transition">
+          <div class="bg-red-100 p-3 rounded-full">
+            <i class="fas fa-map-marker-alt text-red-500 text-xl"></i>
+          </div>
+          <div>
+            <p class="text-sm text-gray-500">ঠিকানা</p>
+            <p class="text-lg font-semibold text-gray-800">সিলেট, বাংলাদেশ (শাহী ঈদগাহ মোড় সংলগ্ন)</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-5 bg-gray-50 p-5 rounded-2xl shadow-sm hover:shadow-md transition">
+          <div class="bg-indigo-100 p-3 rounded-full">
+            <i class="fas fa-envelope text-indigo-500 text-xl"></i>
+          </div>
+          <div>
+            <p class="text-sm text-gray-500">ইমেইল</p>
+            <p class="text-lg font-semibold text-gray-800">itmediabd@outlook.com</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- right form style + call to action -->
+      <div class="bg-gradient-to-br from-gray-50 to-white p-7 rounded-3xl shadow-xl border border-gray-100">
+        <h3 class="text-2xl font-bold mb-4 text-center"><i class="fas fa-comment-dots text-blue-600"></i> দ্রুত যোগাযোগ ফর্ম</h3>
+        <p class="text-center text-gray-500 mb-5">WhatsApp এ ক্লিক করলেই সরাসরি চ্যাট শুরু হবে।</p>
+        <div class="flex flex-col gap-4">
+          <a href="https://wa.me/8801814502810?text=আমি%20IT%20Media%20Service%20Center%20থেকে%20সার্ভিস%20নিতে%20চাই।" target="_blank" class="bg-green-600 hover:bg-green-700 transition text-white text-center py-4 rounded-xl text-lg font-bold flex items-center justify-center gap-3 shadow-lg btn-whatsapp-pulse">
+            <i class="fab fa-whatsapp text-2xl"></i> WhatsApp এ মেসেজ করুন
+          </a>
+          <a href="tel:+8801814502810" class="border-2 border-gray-300 text-gray-700 hover:border-blue-400 hover:text-blue-600 transition text-center py-3 rounded-xl font-medium flex items-center justify-center gap-2">
+            <i class="fas fa-phone-alt"></i> কল করুন: 01814502810
+          </a>
+          <p class="text-xs text-center text-gray-400 mt-3">সকাল ৯টা - রাত ৯টা (শুক্রবার সাপ্তাহিক ছুটি)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- additional qr / trust badge -->
+    <div class="mt-14 flex flex-wrap justify-center gap-6 text-sm text-gray-500">
+      <div class="flex items-center gap-2"><i class="fas fa-shield-alt text-green-500"></i> ১০০% ট্রাস্টেড সার্ভিস</div>
+      <div class="flex items-center gap-2"><i class="fas fa-clock text-blue-500"></i> ফাস্ট ডেলিভারি</div>
+      <div class="flex items-center gap-2"><i class="fas fa-credit-card text-purple-500"></i> পেবিলিটি অফলাইন/অনলাইন</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER with extra links ========== -->
+<footer class="bg-gray-900 text-gray-300 pt-12 pb-6">
+  <div class="max-w-7xl mx-auto px-5 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div>
+      <div class="flex items-center gap-2 text-white text-xl font-bold">
+        <i class="fas fa-microchip"></i> IT Media Service
+      </div>
+      <p class="text-sm text-gray-400 mt-3">ডিজিটাল বাংলাদেশ গড়ার প্রত্যয়ে — আধুনিক প্রযুক্তি ও দক্ষ টিম নিয়ে কাজ করছি।</p>
+    </div>
+    <div>
+      <h4 class="text-white font-semibold mb-3">দ্রুত লিংক</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#services" class="hover:text-white transition"><i class="fas fa-angle-right mr-1"></i> সার্ভিস সমূহ</a></li>
+        <li><a href="#print" class="hover:text-white transition"><i class="fas fa-angle-right mr-1"></i> প্রিন্ট অর্ডার</a></li>
+        <li><a href="#contact" class="hover:text-white transition"><i class="fas fa-angle-right mr-1"></i> যোগাযোগ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white font-semibold mb-3">অফিস সময়</h4>
+      <p class="text-sm">সোম - বৃহস্পতি : ৯am - ৯pm</p>
+      <p class="text-sm">শুক্রবার : বন্ধ</p>
+      <p class="text-sm">শনিবার : ১০am - ৭pm</p>
+      <div class="flex gap-4 mt-4 text-xl">
+        <a href="https://wa.me/8801814502810" class="hover:text-green-400"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="hover:text-blue-400"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="hover:text-rose-400"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-gray-800 mt-8 pt-6 text-center text-sm text-gray-500">
+    <p>© 2026 IT Media Service Center — সর্বস্বত্ব সংরক্ষিত | সেবা ও নির্ভরতার প্রতিশ্রুতি</p>
+  </div>
 </footer>
 
+<!-- small js for active nav highlight on scroll (optional but sleek) -->
+<script>
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("nav a");
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove("text-blue-700", "font-bold");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("text-blue-700", "font-bold");
+      }
+    });
+  });
+</script>
 </body>
 </html>
+```
