@@ -1,647 +1,153 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>TrickBD | Best Deals, Coupons & Smart Shopping in Bangladesh</title>
-    <!-- Font Awesome 6 (Free) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts: Poppins & Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
-            color: #0f172a;
-            scroll-behavior: smooth;
-        }
-
-        /* custom container */
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* header & navigation */
-        .top-bar {
-            background: linear-gradient(135deg, #0b2b26 0%, #0f3d36 100%);
-            color: white;
-            padding: 8px 0;
-            font-size: 13px;
-            font-weight: 500;
-            text-align: center;
-        }
-
-        .main-header {
-            background: white;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .header-flex {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            padding: 16px 0;
-            gap: 16px;
-        }
-
-        .logo-area h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 28px;
-            font-weight: 800;
-            background: linear-gradient(125deg, #0f3d36, #1e7b6e);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: -0.5px;
-        }
-        .logo-area span {
-            font-size: 14px;
-            font-weight: 500;
-            color: #475569;
-            display: block;
-            margin-top: 4px;
-        }
-
-        .search-wrapper {
-            flex: 1;
-            max-width: 480px;
-            margin: 0 20px;
-        }
-        .search-box {
-            display: flex;
-            background: #f1f5f9;
-            border-radius: 60px;
-            padding: 5px 8px 5px 20px;
-            border: 1px solid #e2e8f0;
-            transition: all 0.2s;
-        }
-        .search-box:focus-within {
-            background: white;
-            border-color: #1e7b6e;
-            box-shadow: 0 0 0 3px rgba(30,123,110,0.2);
-        }
-        .search-box input {
-            flex: 1;
-            background: transparent;
-            border: none;
-            padding: 12px 0;
-            font-size: 15px;
-            outline: none;
-            font-weight: 500;
-        }
-        .search-box button {
-            background: #1e7b6e;
-            border: none;
-            color: white;
-            width: 44px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 18px;
-            transition: 0.2s;
-        }
-        .search-box button:hover {
-            background: #0f5e53;
-        }
-
-        .header-icons {
-            display: flex;
-            gap: 24px;
-            align-items: center;
-        }
-        .header-icons i {
-            font-size: 22px;
-            color: #1e293b;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .header-icons i:hover { color: #1e7b6e; }
-
-        /* main nav */
-        .category-nav {
-            background: white;
-            border-top: 1px solid #eef2ff;
-            border-bottom: 1px solid #eef2ff;
-            padding: 12px 0;
-        }
-        .nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px;
-            list-style: none;
-        }
-        .nav-links li a {
-            text-decoration: none;
-            font-weight: 600;
-            color: #334155;
-            font-size: 15px;
-            transition: 0.2s;
-        }
-        .nav-links li a:hover, .nav-links li.active a {
-            color: #1e7b6e;
-            border-bottom: 2px solid #1e7b6e;
-            padding-bottom: 6px;
-        }
-
-        /* hero banner */
-        .hero {
-            background: linear-gradient(105deg, #eef9f5 0%, #ffffff 100%);
-            margin: 28px 0 32px;
-            border-radius: 36px;
-            padding: 40px 36px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
-        }
-        .hero-text h2 {
-            font-size: 32px;
-            font-weight: 800;
-            color: #0b2b26;
-        }
-        .hero-text p {
-            margin-top: 12px;
-            color: #2c3e3a;
-            max-width: 500px;
-        }
-        .hero-badge {
-            background: #facc15;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 700;
-            display: inline-block;
-            margin-top: 20px;
-        }
-
-        /* section title */
-        .section-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin: 40px 0 20px;
-            flex-wrap: wrap;
-        }
-        .section-title h3 {
-            font-size: 26px;
-            font-weight: 700;
-            letter-spacing: -0.3px;
-        }
-        .section-title a {
-            color: #1e7b6e;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        /* product grid */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 28px;
-            margin-bottom: 40px;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 24px;
-            overflow: hidden;
-            transition: 0.25s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-            border: 1px solid #eef2f6;
-            cursor: pointer;
-        }
-        .product-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.12);
-            border-color: #d1e6e1;
-        }
-        .card-img {
-            background: #f9fcfa;
-            text-align: center;
-            padding: 28px 16px;
-            font-size: 68px;
-            color: #2c5f56;
-        }
-        .card-info {
-            padding: 20px 18px 24px;
-        }
-        .card-info h4 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .price {
-            font-weight: 800;
-            font-size: 22px;
-            color: #0f3d36;
-            margin: 12px 0 6px;
-        }
-        .old-price {
-            font-size: 14px;
-            color: #94a3b8;
-            text-decoration: line-through;
-            margin-left: 8px;
-            font-weight: 400;
-        }
-        .discount {
-            background: #fee2e2;
-            color: #b91c1c;
-            font-size: 13px;
-            font-weight: 700;
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 50px;
-        }
-        .rating {
-            margin: 12px 0;
-            color: #fbbf24;
-            font-size: 14px;
-        }
-        .deal-btn {
-            width: 100%;
-            background: #0f3d36;
-            border: none;
-            color: white;
-            font-weight: 600;
-            padding: 10px;
-            border-radius: 40px;
-            margin-top: 12px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .deal-btn:hover {
-            background: #1e7b6e;
-        }
-
-        /* flash sale banner */
-        .flash-sale {
-            background: linear-gradient(115deg, #1f2f2c, #1a4a42);
-            border-radius: 28px;
-            padding: 26px 32px;
-            margin: 48px 0;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        .timer {
-            display: flex;
-            gap: 16px;
-        }
-        .timer-box {
-            background: #ffffff20;
-            backdrop-filter: blur(4px);
-            border-radius: 18px;
-            padding: 8px 16px;
-            text-align: center;
-            font-weight: 800;
-            font-size: 24px;
-        }
-
-        /* footer */
-        footer {
-            background: #0b1e1b;
-            color: #cbd5e1;
-            margin-top: 60px;
-            padding: 48px 0 28px;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
-            gap: 36px;
-        }
-        .footer-col h4 {
-            color: white;
-            margin-bottom: 20px;
-        }
-        .footer-col p, .footer-col a {
-            color: #a0b3ae;
-            text-decoration: none;
-            line-height: 1.8;
-        }
-        .copyright {
-            text-align: center;
-            margin-top: 48px;
-            padding-top: 24px;
-            border-top: 1px solid #1e3a34;
-            font-size: 13px;
-        }
-
-        /* responsive */
-        @media (max-width: 700px) {
-            .header-flex { flex-direction: column; align-items: stretch; }
-            .search-wrapper { max-width: 100%; margin: 8px 0; }
-            .hero { text-align: center; justify-content: center; }
-            .nav-links { justify-content: center; }
-        }
-        .no-result {
-            text-align: center;
-            padding: 40px;
-            background: white;
-            border-radius: 40px;
-            font-size: 18px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IT Media Service | পূর্ণাঙ্গ ডিজিটাল সেবা কেন্দ্র</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap');
+    * { font-family: 'Inter', sans-serif; margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    .premium-nav {
+      background: rgba(10, 25, 47, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .hero-grad {
+      background: linear-gradient(135deg, #0B1120 0%, #111827 50%, #1E1B4B 100%);
+    }
+    .card-hover {
+      transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 35px -15px rgba(0,0,0,0.25);
+    }
+    .btn-grad {
+      background: linear-gradient(95deg, #4F46E5, #7C3AED);
+      transition: all 0.2s;
+    }
+    .btn-grad:hover {
+      transform: scale(1.03);
+      box-shadow: 0 15px 20px -10px rgba(79,70,229,0.4);
+    }
+    .section-badge {
+      background: rgba(79,70,229,0.12);
+      backdrop-filter: blur(4px);
+      border-radius: 40px;
+    }
+    .frame-img {
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.5s;
+    }
+    .group:hover .frame-img {
+      transform: scale(1.08);
+    }
+  </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800"><nav class="fixed top-0 w-full z-50 premium-nav transition-all">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16 lg:h-20">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg">
+          <i class="fas fa-microchip text-white text-sm"></i>
+        </div>
+        <span class="font-extrabold text-xl text-white">IT Media<span class="text-indigo-300">Service</span></span>
+      </div>
+      <div class="hidden md:flex gap-7 text-sm font-semibold text-gray-200">
+        <a href="#home" class="hover:text-white transition">হোম</a>
+        <a href="#services" class="hover:text-white transition">সেবাসমূহ</a>
+        <a href="#products" class="hover:text-white transition">প্রিন্ট ও পণ্য</a>
+        <a href="#contact" class="hover:text-white transition">যোগাযোগ</a>
+      </div>
+      <a href="https://wa.me/8801814502810" target="_blank" class="bg-white/10 backdrop-blur-sm text-white px-5 py-2 rounded-full text-sm font-semibold border border-white/20 hover:bg-white/20 transition flex items-center gap-2">
+        <i class="fab fa-whatsapp text-green-400"></i> হোয়াটসঅ্যাপ
+      </a>
+    </div>
+  </div>
+</nav><section id="home" class="relative pt-32 pb-24 md:pt-40 md:pb-32 hero-grad overflow-hidden">
+  <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/circuit-board.png')]"></div>
+  <div class="relative z-10 max-w-6xl mx-auto text-center px-6">
+    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-5 py-2 text-indigo-200 text-sm border border-white/20 mb-6">
+      <i class="fas fa-certificate"></i> নির্ভরযোগ্য সেবা কেন্দ্র - ২০২৬
+    </div>
+    <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">সকল ডিজিটাল ও <span class="bg-gradient-to-r from-indigo-300 to-purple-300 bg-clip-text text-transparent">অফলাইন সেবা</span> এক ঠিকানায়</h1>
+    <p class="text-lg text-gray-300 max-w-2xl mx-auto mt-5">পাসপোর্ট থেকে পুলিশ ক্লিয়ারেন্স, মগ প্রিন্ট থেকে ফ্রেম ক্রেস্ট — পেশাদারিত্ব ও গুণগত মানের প্রতিশ্রুতি।</p>
+    <div class="flex flex-wrap justify-center gap-5 mt-8">
+      <a href="#services" class="btn-grad text-white px-7 py-3 rounded-xl font-bold shadow-xl flex items-center gap-2"><i class="fas fa-list-ul"></i> সেবা দেখুন</a>
+      <a href="https://wa.me/8801814502810" class="bg-white/10 border border-white/30 text-white px-7 py-3 rounded-xl font-semibold hover:bg-white/20 transition flex items-center gap-2"><i class="fab fa-whatsapp"></i> সরাসরি অর্ডার</a>
+    </div>
+  </div>
+</section><section id="services" class="py-24 px-6 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-14">
+      <span class="section-badge text-indigo-700 px-5 py-1.5 text-sm font-semibold inline-block"><i class="fas fa-star-of-life mr-1"></i> আমাদের এক্সক্লুসিভ সেবা</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold mt-5 text-gray-800">সকল প্রকার ডিজিটাল ও গভর্নমেন্ট সার্ভিস</h2>
+    </div><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="bg-gray-50 p-5 rounded-xl shadow-sm border border-gray-100 card-hover">
+    <div class="flex items-center gap-3">
+      <i class="fas fa-passport text-2xl text-indigo-600"></i>
+      <span class="font-bold">পাসপোর্ট আবেদন</span>
+    </div>
+    <p class="text-sm text-gray-500 mt-2">অনলাইন ফিলআপ, ডেলিভারি ট্র্যাকিং সহ সম্পূর্ণ গাইড</p>
+  </div> 
 
-<div class="top-bar">
-    <i class="fas fa-fire"></i> Mega Ramadan Sale! Extra 15% off on all electronics | Coupon: TRICK15
-</div>
+  <div class="bg-gray-50 p-5 rounded-xl shadow-sm border border-gray-100 card-hover">
+    <div class="flex items-center gap-3">
+      <i class="fas fa-id-card text-2xl text-indigo-600"></i>
+      <span class="font-bold">এনআইডি কার্ড</span>
+    </div>
+    <p class="text-sm text-gray-500 mt-2">এনআইডি সংশোধন, ডুপ্লিকেট ও আপডেট সার্ভিস</p>
+  </div> 
 
-<div class="main-header">
-    <div class="container header-flex">
-        <div class="logo-area">
-            <h1>Trick<span style="color:#1e7b6e;">BD</span></h1>
-            <span><i class="fas fa-tag"></i> smarter shopping, bigger savings</span>
-        </div>
-        <div class="search-wrapper">
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Search deals, products, or brands..." autocomplete="off">
-                <button id="searchBtn"><i class="fas fa-search"></i></button>
-            </div>
-        </div>
-        <div class="header-icons">
-            <i class="far fa-heart"></i>
-            <i class="far fa-bell"></i>
-            <i class="fas fa-user-circle"></i>
-        </div>
-    </div>
-</div>
+  <div class="bg-gray-50 p-5 rounded-xl shadow-sm border border-gray-100 card-hover">
+    <div class="flex items-center gap-3">
+      <i class="fas fa-shield-alt text-2xl text-indigo-600"></i>
+      <span class="font-bold">পুলিশ ক্লিয়ারেন্স</span>
+    </div>
+    <p class="text-sm text-gray-500 mt-2">সব দেশের পুলিশ ক্লিয়ারেন্স সার্ভিস</p>
+  </div>
+</div> 
 
-<div class="category-nav">
-    <div class="container">
-        <ul class="nav-links" id="categoryFilter">
-            <li class="active" data-cat="all"><a href="#">All Deals</a></li>
-            <li data-cat="electronics"><a href="#">Electronics</a></li>
-            <li data-cat="fashion"><a href="#">Fashion</a></li>
-            <li data-cat="home"><a href="#">Home & Living</a></li>
-            <li data-cat="gadgets"><a href="#">Gadgets</a></li>
-            <li data-cat="groceries"><a href="#">Groceries</a></li>
-        </ul>
-    </div>
-</div>
+  </div>
+</section><section id="products" class="py-24 px-6 bg-gradient-to-br from-indigo-50 to-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-14">
+      <h2 class="text-3xl md:text-4xl font-extrabold">🎁 প্রিমিয়াম প্রিন্ট ও পণ্য</h2>
+    </div><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all">
+    <div class="h-56 overflow-hidden bg-gray-200">
+      <div class="frame-img w-full h-full bg-cover" style="background-image: url('https://images.pexels.com/photos/1571460/art-frame-picture-display-1571460.jpeg?auto=compress&cs=tinysrgb&w=600');"></div>
+    </div>
+    <div class="p-5">
+      <h3 class="font-bold text-xl">ফ্রেম ক্রেস্ট</h3>
+      <p class="text-gray-500 text-sm">কাস্টম ডিজাইন ও প্রিন্ট</p>
+    </div>
+  </div> 
 
-<div class="container">
-    <!-- hero banner -->
-    <div class="hero">
-        <div class="hero-text">
-            <h2>Unlock hidden coupons <br> & flash deals 🔥</h2>
-            <p>Join 50k+ smart shoppers in Bangladesh — Save up to 70% on top brands daily.</p>
-            <div class="hero-badge"><i class="fas fa-gem"></i> TrickBD exclusive: Extra 8% cashback</div>
-        </div>
-        <div class="hero-img">
-            <i class="fas fa-gift" style="font-size: 90px; color:#1e7b6e; opacity:0.6;"></i>
-        </div>
-    </div>
+  <div class="group bg-white rounded-2xl overflow-hidden shadow-md">
+    <div class="h-56 overflow-hidden">
+      <div class="frame-img w-full h-full bg-cover" style="background-image: url('https://images.pexels.com/photos/987586/pexels-photo-987586.jpeg?auto=compress&cs=tinysrgb&w=600');"></div>
+    </div>
+    <div class="p-5">
+      <h3 class="font-bold text-xl">মগ প্রিন্ট</h3>
+      <p class="text-gray-500">ফটো ও লোগো প্রিন্ট</p>
+    </div>
+  </div>
+</div> 
 
-    <!-- Flash sale countdown -->
-    <div class="flash-sale">
-        <div>
-            <h3><i class="fas fa-bolt"></i> FLASH SALE · Limited time</h3>
-            <p>Grab discounts before they vanish!</p>
-        </div>
-        <div class="timer" id="countdownTimer">
-            <div class="timer-box"><span id="hours">00</span><br>Hrs</div>
-            <div class="timer-box"><span id="minutes">00</span><br>Mins</div>
-            <div class="timer-box"><span id="seconds">00</span><br>Secs</div>
-        </div>
-    </div>
-
-    <div class="section-title">
-        <h3>🔥 Today’s Hottest Deals</h3>
-        <a href="#">View all <i class="fas fa-arrow-right"></i></a>
-    </div>
-
-    <!-- product grid dynamic -->
-    <div id="productsContainer" class="products-grid"></div>
-</div>
-
-<footer>
-    <div class="container footer-grid">
-        <div class="footer-col">
-            <h4>TrickBD</h4>
-            <p>Bangladesh's #1 deal community. Discover promo codes, price drops & shopping hacks.</p>
-        </div>
-        <div class="footer-col">
-            <h4>Quick Links</h4>
-            <p><a href="#">About Us</a></p>
-            <p><a href="#">Coupon Policy</a></p>
-            <p><a href="#">Submit a Deal</a></p>
-        </div>
-        <div class="footer-col">
-            <h4>Support</h4>
-            <p><a href="#">Help Center</a></p>
-            <p><a href="#">Money Back Guarantee</a></p>
-            <p><a href="#">Contact</a></p>
-        </div>
-        <div class="footer-col">
-            <h4>Follow Us</h4>
-            <p><i class="fab fa-facebook"></i> Facebook &nbsp;&nbsp; <i class="fab fa-instagram"></i> Insta</p>
-            <p><i class="fab fa-whatsapp"></i> WhatsApp Community</p>
-        </div>
-    </div>
-    <div class="container copyright">
-        © 2025 TrickBD.com — Smart Deals, Big Savings. All trademarks belong to their respective owners.
-    </div>
-</footer>
-
-<script>
-    // ---------- PRODUCT DATABASE (inspired by TrickBD style) ----------
-    const productsData = [
-        { id: 1, name: "Xiaomi Redmi Note 13 Pro", category: "electronics", price: 28990, oldPrice: 34999, discount: "17%", rating: 4.8, imageIcon: "fas fa-mobile-alt", tag: "Flash" },
-        { id: 2, name: "OnePlus Nord CE 3", category: "electronics", price: 26999, oldPrice: 31999, discount: "15%", rating: 4.7, imageIcon: "fas fa-mobile-alt" },
-        { id: 3, name: "Wireless Noise Cancelling Headphones", category: "gadgets", price: 4250, oldPrice: 6990, discount: "39%", rating: 4.9, imageIcon: "fas fa-headphones" },
-        { id: 4, name: "Men's Casual Shirt (Cotton Linen)", category: "fashion", price: 1190, oldPrice: 2490, discount: "52%", rating: 4.5, imageIcon: "fas fa-tshirt" },
-        { id: 5, name: "Smart Air Fryer 5.2L", category: "home", price: 6490, oldPrice: 11990, discount: "46%", rating: 4.6, imageIcon: "fas fa-utensils" },
-        { id: 6, name: "Gaming Mouse RGB 16000 DPI", category: "gadgets", price: 1890, oldPrice: 3990, discount: "52%", rating: 4.7, imageIcon: "fas fa-computer-mouse" },
-        { id: 7, name: "Fresh Organic Honey (1kg)", category: "groceries", price: 890, oldPrice: 1400, discount: "36%", rating: 4.9, imageIcon: "fas fa-seedling" },
-        { id: 8, name: "Men's Running Shoes", category: "fashion", price: 2590, oldPrice: 4990, discount: "48%", rating: 4.4, imageIcon: "fas fa-shoe-prints" },
-        { id: 9, name: "4K Action Camera Ultra HD", category: "electronics", price: 11990, oldPrice: 18990, discount: "37%", rating: 4.6, imageIcon: "fas fa-camera" },
-        { id: 10, name: "LED Desk Lamp with Wireless Charger", category: "home", price: 2450, oldPrice: 4200, discount: "41%", rating: 4.3, imageIcon: "fas fa-lamp" },
-        { id: 11, name: "Premium Leather Backpack", category: "fashion", price: 2150, oldPrice: 3950, discount: "45%", rating: 4.8, imageIcon: "fas fa-bag-shopping" },
-        { id: 12, name: "Smart Watch Fitness Tracker", category: "gadgets", price: 3590, oldPrice: 6990, discount: "48%", rating: 4.7, imageIcon: "fas fa-clock" }
-    ];
-
-    let currentCategory = "all";
-    let currentSearchTerm = "";
-
-    // Helper: render products based on filters
-    function renderProducts() {
-        const container = document.getElementById("productsContainer");
-        if (!container) return;
-        
-        let filtered = [...productsData];
-        
-        // category filter
-        if (currentCategory !== "all") {
-            filtered = filtered.filter(p => p.category === currentCategory);
-        }
-        
-        // search filter (name)
-        if (currentSearchTerm.trim() !== "") {
-            const term = currentSearchTerm.trim().toLowerCase();
-            filtered = filtered.filter(p => p.name.toLowerCase().includes(term));
-        }
-        
-        if (filtered.length === 0) {
-            container.innerHTML = `<div class="no-result"><i class="fas fa-frown-open"></i> <br> No deals found! Try a different keyword or category. <br> 🔍 Be the first to grab exclusive coupons!</div>`;
-            return;
-        }
-        
-        // generate HTML
-        container.innerHTML = filtered.map(product => `
-            <div class="product-card" data-id="${product.id}">
-                <div class="card-img">
-                    <i class="${product.imageIcon}" style="font-size: 52px;"></i>
-                </div>
-                <div class="card-info">
-                    <h4>${product.name}</h4>
-                    <div class="rating">
-                        ${generateStars(product.rating)} <span style="color:#475569;">(${product.rating})</span>
-                    </div>
-                    <div class="price">
-                        ৳${product.price.toLocaleString()}
-                        ${product.oldPrice ? `<span class="old-price">৳${product.oldPrice.toLocaleString()}</span>` : ''}
-                        ${product.discount ? `<span class="discount">-${product.discount}</span>` : ''}
-                    </div>
-                    <button class="deal-btn" data-dealname="${product.name}"><i class="fas fa-bolt"></i> Grab Deal →</button>
-                </div>
-            </div>
-        `).join('');
-        
-        // attach click event for deal buttons (simple alert for demonstration)
-        document.querySelectorAll('.deal-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const productName = btn.getAttribute('data-dealname');
-                alert(`✨ Hurry! Exclusive TrickBD coupon applied!\nProduct: ${productName}\nRedirecting to merchant site... (demo)`);
-            });
-        });
-        
-        // card click effect (optional)
-        document.querySelectorAll('.product-card').forEach(card => {
-            card.addEventListener('click', (e) => {
-                if(e.target.classList.contains('deal-btn')) return;
-                const id = card.getAttribute('data-id');
-                alert(`🔍 View details & price history for product ID ${id} (TrickBD exclusive insights)`);
-            });
-        });
-    }
-    
-    // star rating helper
-    function generateStars(rating) {
-        const fullStar = '<i class="fas fa-star"></i>';
-        const halfStar = '<i class="fas fa-star-half-alt"></i>';
-        const emptyStar = '<i class="far fa-star"></i>';
-        let stars = '';
-        let full = Math.floor(rating);
-        let half = (rating % 1) >= 0.5 ? 1 : 0;
-        for(let i=0; i<full; i++) stars += fullStar;
-        if(half) stars += halfStar;
-        let remaining = 5 - full - half;
-        for(let i=0; i<remaining; i++) stars += emptyStar;
-        return stars;
-    }
-    
-    // category click handling
-    function setupCategoryListeners() {
-        const navItems = document.querySelectorAll('#categoryFilter li');
-        navItems.forEach(item => {
-            item.addEventListener('click', (e) => {
-                e.preventDefault();
-                const cat = item.getAttribute('data-cat');
-                if(cat) {
-                    currentCategory = cat;
-                    // update active class
-                    navItems.forEach(li => li.classList.remove('active'));
-                    item.classList.add('active');
-                    renderProducts();
-                }
-            });
-        });
-    }
-    
-    // search handling
-    function setupSearch() {
-        const searchInput = document.getElementById('searchInput');
-        const searchBtn = document.getElementById('searchBtn');
-        function performSearch() {
-            currentSearchTerm = searchInput.value;
-            renderProducts();
-        }
-        searchBtn.addEventListener('click', performSearch);
-        searchInput.addEventListener('keyup', (e) => {
-            if(e.key === 'Enter') performSearch();
-        });
-        // optional: clear search by empty? but fine
-    }
-    
-    // Flash sale countdown (next 24hrs dynamic)
-    function startCountdown() {
-        // Set target to next 10pm (or just next 23h 59m) for demo: let's make it 2 hours from now for interesting view
-        // To mimic real flash sale, we set countdown to end at 11:59 PM today BD time? For simplicity: next midnight 12am local? but use 4 hours from initialization
-        let targetTime = new Date();
-        targetTime.setHours(targetTime.getHours() + 4);
-        targetTime.setMinutes(0);
-        targetTime.setSeconds(0);
-        // avoid negative if already passed, ensure future
-        if(targetTime < new Date()) targetTime.setHours(targetTime.getHours() + 4);
-        
-        function updateTimer() {
-            const now = new Date();
-            const diff = targetTime - now;
-            if(diff <= 0) {
-                // reset for next cycle (restart 4h again)
-                targetTime = new Date();
-                targetTime.setHours(targetTime.getHours() + 4);
-                document.getElementById('hours').innerText = "04";
-                document.getElementById('minutes').innerText = "00";
-                document.getElementById('seconds').innerText = "00";
-                return;
-            }
-            const hours = Math.floor(diff / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (3600000)) / 60000);
-            const seconds = Math.floor((diff % 60000) / 1000);
-            document.getElementById('hours').innerText = String(hours).padStart(2,'0');
-            document.getElementById('minutes').innerText = String(minutes).padStart(2,'0');
-            document.getElementById('seconds').innerText = String(seconds).padStart(2,'0');
-        }
-        updateTimer();
-        setInterval(updateTimer, 1000);
-    }
-    
-    // initial load and also add some extra dynamic data: for home feel, add brand strip
-    function init() {
-        renderProducts();
-        setupCategoryListeners();
-        setupSearch();
-        startCountdown();
-        // extra micro interaction: notification bell dummy
-        const bell = document.querySelector('.fa-bell');
-        if(bell) {
-            bell.addEventListener('click', () => alert("🔔 Get notified when price drops! (TrickBD alert system coming soon)"));
-        }
-        const heart = document.querySelector('.fa-heart');
-        if(heart) {
-            heart.addEventListener('click', () => alert("❤️ Save your favorite deals — login to create wishlist!"));
-        }
-    }
-    
-    init();
-</script>
-</body>
+  </div>
+</section><section id="contact" class="py-24 px-6 bg-slate-900 text-white">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl md:text-5xl font-extrabold">যোগাযোগ করুন</h2>
+    <p class="text-gray-300 mt-4">WhatsApp অথবা ফোনে যোগাযোগ করুন</p>
+    <a href="https://wa.me/8801814502810" target="_blank" class="mt-6 inline-block bg-green-600 hover:bg-green-500 px-8 py-3 rounded-xl font-bold shadow-lg transition">
+      WhatsApp মেসেজ
+    </a>
+  </div>
+</section><footer class="bg-slate-950 text-slate-400 py-8 px-6 text-center border-t border-slate-800">
+  <p>© 2026 IT Media Service Center</p>
+</footer></body>
 </html>
